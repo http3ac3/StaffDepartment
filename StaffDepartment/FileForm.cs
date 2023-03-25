@@ -18,7 +18,9 @@ namespace StaffDepartment
         private string wb_series;
         private string wb_number;
         private SqlConnection connection;
+        private DirectorForm directorForm;
 
+        public int idStaffDepartment;
         public int GetIdPost()
         {
             SqlDataAdapter adapter = new SqlDataAdapter($"SELECT id_post FROM Post WHERE post_name = '{PostCB.Text}'", connection);
@@ -39,21 +41,65 @@ namespace StaffDepartment
         public void UpdateInfo(string lastName, string firstName, string patronymic, string wbSeries, string wbNumber,
             string phoneNumber, string birthdayDate, int experience, int mcNumber, string personellNumber, string contractStatus,
             string conclusionDate, string employmentDate, string dismissialDate, string country, string region, string locality,
-            string street, string homeNumber, int? apartmentNumber, int idSD, int? idPost, int? idWD)
+            string street, string homeNumber, string apartmentNumber, int idSD, string idPost, string idWD)
         {
+            patronymic = patronymic.Replace(" ", "");
+            patronymic = (patronymic == "" ? "NULL" :  $"\'{patronymic}\'");
 
-            MessageBox.Show(GetIdWorkDepartment().ToString());
+            idWD = (idWD == "Не указано" ?  "NULL" : GetIdWorkDepartment().ToString());
+
+            idPost = (idPost == "Не указано" ? "NULL" : GetIdPost().ToString());
+
+            if (apartmentNumber == "") apartmentNumber = "NULL";
+
+            dismissialDate = (dismissialDate == "" ? "NULL" : $"\'{dismissialDate}\'");
+
+            employmentDate = (employmentDate == "" ? "NULL" : $"\'{employmentDate}\'");
+
+            conclusionDate = (conclusionDate == "" ? "NULL" : $"\'{conclusionDate}\'");
+
+            personellNumber = (personellNumber == "" ? "NULL" : $"\'{personellNumber}\'");
+
+
             string update = $"UPDATE Personal_File SET last_name = '{lastName}', first_name = '{firstName}', " +
-                $"patronymic = '{patronymic}', wb_series = '{wbSeries}', wb_number = '{wbNumber}', " +
+                $"patronymic = {patronymic}, wb_series = '{wbSeries}', wb_number = '{wbNumber}', " +
                 $"phone_number = '{phoneNumber}', birthday_date = '{birthdayDate}', " +
                 $"experience = {experience}, mc_number = {mcNumber}, " +
-                $"personell_number = '{personellNumber}', contract_status = '{contractStatus}', " +
-                $"conclusion_date = '{conclusionDate}', employment_date = '{employmentDate}', " +
-                $"dismissial_date = '{dismissialDate}', country = '{country}', region = '{region}', " +
-                $"locality = '{locality}, street = '{street}', home_number = '{homeNumber}', " +
+                $"personell_number = {personellNumber}, contract_status = '{contractStatus}', " +
+                $"conclusion_date = {conclusionDate}, employment_date = {employmentDate}, " +
+                $"dismissial_date = {dismissialDate}, country = '{country}', region = '{region}', " +
+                $"locality = '{locality}', street = '{street}', home_number = '{homeNumber}', " +
                 $"apartment_number = {apartmentNumber}, id_staff_department = {idSD}, id_post = {idPost}, " +
-                $"id_work_department = {idWD}";
-            
+                $"id_work_department = {idWD} WHERE wb_series = '{wb_series}' AND wb_number = '{wb_number}'";
+
+            try
+            {
+                new SqlCommand(update, connection).ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+            MessageBox.Show($"Информация об {lastName} {firstName} {patronymic} успешно обновлена!");
+            directorForm.RefreshPersonalFileDataGrid();
+        }
+
+        public void UpdateSDInfo(int idSD)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT country, region, locality, street, home_number, housing_number, " +
+                $"apartment_number FROM Staff_Department WHERE id_staff_department = {idSD}", connection);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            DataRow row = ds.Tables[0].Rows[0];
+            SDCountryTextBox.Text = row[0].ToString();
+            SDRegionTextBox.Text = row[1].ToString();
+            SDLocalityTextBox.Text = row[2].ToString();
+            SDStreetTextBox.Text = row[3].ToString();
+            SDHomeNumberTextBox.Text = row[4].ToString();
+            SDHousingNumberTextBox.Text = row[5].ToString();
+            SDApartmentNumberTextBox.Text = row[6].ToString();
         }
 
         public void GetPostBox(object value)
@@ -116,26 +162,22 @@ namespace StaffDepartment
             PersonellNumberTextBox.Text = row[0].ToString();
 
             GetPostBox(row[1].ToString());
-            GetWorkingDepartmentBox(row[13].ToString());
+            GetWorkingDepartmentBox(row[6].ToString());
             GetContractStatus(row[2].ToString());
 
             ConclusionDateTextBox.Text = row[3].ToString();
             EmploymentDateTextBox.Text = row[4].ToString();
             DismissialDateTextBox.Text = row[5].ToString();
-            SDCountryTextBox.Text = row[6].ToString();
-            SDRegionTextBox.Text = row[7].ToString();
-            SDLocalityTextBox.Text = row[8].ToString();
-            SDStreetTextBox.Text = row[9].ToString();
-            SDHomeNumberTextBox.Text = row[10].ToString();
-            SDHousingNumberTextBox.Text = row[11].ToString();
-            SDApartmentNumberTextBox.Text = row[12].ToString();
+            idStaffDepartment = int.Parse(row[7].ToString());
+            UpdateSDInfo(idStaffDepartment);
         }
 
-        public FileForm(string wb_series, string wb_number, SqlConnection connection)
+        public FileForm(string wb_series, string wb_number, SqlConnection connection, DirectorForm directorForm)
         {
             this.connection = connection;
             this.wb_number = wb_number;
             this.wb_series = wb_series;
+            this.directorForm = directorForm;
             InitializeComponent();
             
         }
@@ -164,7 +206,7 @@ namespace StaffDepartment
         private void UpdateInfoButton_Click(object sender, EventArgs e)
         {
             changingMode = true;
-
+            ChangeSDButton.Enabled = true;
             PhoneNumberTextBox.ReadOnly = false;
             foreach (var tabPage in tabControl1.Controls.OfType<TabPage>())
             {
@@ -191,14 +233,48 @@ namespace StaffDepartment
                 }
                 else if (res == DialogResult.No)
                 {
-                    MessageBox.Show($"Данные об {LastNameTextBox.Text} изменены не были", "Изменение данных о сотруднике",
-                       MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show($"Данные об {LastNameTextBox.Text} {FirstNameTextBox.Text} {PatronymicTextBox.Text} " +
+                        $"изменены не были", "Изменение данных о сотруднике", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     e.Cancel = false;
                 }
                 else if (res == DialogResult.Yes)
                 {
-                    
+
+                    if (LastNameTextBox.Text == null)
+                    {
+                        MessageBox.Show("Поле \'Фамилия\' не заполнено!");
+                        return;
+                    }
+                    else if (FirstNameTextBox.Text == null)
+                    {
+                        MessageBox.Show("Поле \'Имя\' не заполнено!");
+                        return;
+                    }
+                    UpdateInfo(LastNameTextBox.Text.Trim(), FirstNameTextBox.Text.Trim(), PatronymicTextBox.Text.Trim(), WBSeriesCB.Text, WBNumberTextBox.Text, 
+                        PhoneNumberTextBox.Text, BirthdayDateTextBox.Text, int.Parse(ExperienceTextBox.Text), int.Parse(MCNumberTextBox.Text),
+                        PersonellNumberTextBox.Text, ContractStatusCB.Text, ConclusionDateTextBox.Text, EmploymentDateTextBox.Text, DismissialDateTextBox.Text,
+                        CountryTextBox.Text, RegionTextBox.Text, LocalityTextBox.Text, StreetTextBox.Text, HomeNumberTextBox.Text, 
+                        ApartmentNumberTextBox.Text, idStaffDepartment, PostCB.Text, WorkingDepartmentCB.Text);
                 }
+            }
+        }
+
+        private void ChangeSDButton_Click(object sender, EventArgs e)
+        {
+            new ChooseStaffDepartmentForm(connection, this).Show();
+        }
+
+        private void ContractStatusCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // ожидает заключения
+            if (ContractStatusCB.SelectedIndex == 0)
+            {
+                ConclusionDateTextBox.Text = "";
+                EmploymentDateTextBox.Text = "";
+                DismissialDateTextBox.Text = "";
+                PersonellNumberTextBox.Text = "";
+                PostCB.SelectedIndex = PostCB.Items.Count - 1;
+                WorkingDepartmentCB.SelectedIndex = WorkingDepartmentCB.Items.Count - 1;
             }
         }
     }

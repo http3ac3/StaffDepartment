@@ -45,6 +45,7 @@ namespace StaffDepartment
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.ControlDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.регистрацияПользователяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PersonalFileJournalButton = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.EmployeeGroupsBox.SuspendLayout();
@@ -157,6 +158,8 @@ namespace StaffDepartment
             // 
             // PersonalFileDataGrid
             // 
+            this.PersonalFileDataGrid.AllowUserToAddRows = false;
+            this.PersonalFileDataGrid.AllowUserToDeleteRows = false;
             this.PersonalFileDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.PersonalFileDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PersonalFileDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -202,7 +205,8 @@ namespace StaffDepartment
             // 
             this.ControlDropDownButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.ControlDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.регистрацияПользователяToolStripMenuItem});
+            this.регистрацияПользователяToolStripMenuItem,
+            this.PersonalFileJournalButton});
             this.ControlDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("ControlDropDownButton.Image")));
             this.ControlDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ControlDropDownButton.Name = "ControlDropDownButton";
@@ -212,8 +216,15 @@ namespace StaffDepartment
             // регистрацияПользователяToolStripMenuItem
             // 
             this.регистрацияПользователяToolStripMenuItem.Name = "регистрацияПользователяToolStripMenuItem";
-            this.регистрацияПользователяToolStripMenuItem.Size = new System.Drawing.Size(245, 24);
+            this.регистрацияПользователяToolStripMenuItem.Size = new System.Drawing.Size(278, 24);
             this.регистрацияПользователяToolStripMenuItem.Text = "Регистрация пользователя";
+            // 
+            // PersonalFileJournalButton
+            // 
+            this.PersonalFileJournalButton.Name = "PersonalFileJournalButton";
+            this.PersonalFileJournalButton.Size = new System.Drawing.Size(278, 24);
+            this.PersonalFileJournalButton.Text = "Журнал изменений личных дел";
+            this.PersonalFileJournalButton.Click += new System.EventHandler(this.PersonalFileJournalButton_Click);
             // 
             // DirectorForm
             // 
@@ -261,5 +272,6 @@ namespace StaffDepartment
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton ControlDropDownButton;
         private System.Windows.Forms.ToolStripMenuItem регистрацияПользователяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PersonalFileJournalButton;
     }
 }

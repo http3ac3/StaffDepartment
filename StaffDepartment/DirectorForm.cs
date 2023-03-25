@@ -23,6 +23,13 @@ namespace StaffDepartment
             WorkingRadioButton.Checked = true;
         }
 
+        public void RefreshPersonalFileDataGrid()
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter("EXEC FileOnPosts", connection);
+            DataSet dataSet = new DataSet();
+            adapter.Fill(dataSet);
+            PersonalFileDataGrid.DataSource = dataSet.Tables[0];
+        }
         private void DirectorForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             var result = MessageBox.Show("Вы уверены, что хотите выйти?", "Выход из системы", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -73,12 +80,17 @@ namespace StaffDepartment
             string wb_series = PersonalFileDataGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
             string wb_number = PersonalFileDataGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
 
-            new FileForm(wb_series, wb_number, connection).Show();
+            new FileForm(wb_series, wb_number, connection, this).Show();
         }
 
         private void InsertButton_Click(object sender, EventArgs e)
         {
-            
+            new AddPersonalFile(connection, this).Show();
+        }
+
+        private void PersonalFileJournalButton_Click(object sender, EventArgs e)
+        {
+            new PersonalFileJournal(connection).Show();
         }
     }
 }

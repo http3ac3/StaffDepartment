@@ -72,7 +72,13 @@ namespace StaffDepartment
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.WBSeriesCB = new System.Windows.Forms.ComboBox();
+            this.PatronymicTextBox = new System.Windows.Forms.TextBox();
+            this.FirstNameTextBox = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ChangeSDButton = new System.Windows.Forms.Button();
+            this.WorkingDepartmentCB = new System.Windows.Forms.ComboBox();
             this.PostCB = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -90,16 +96,9 @@ namespace StaffDepartment
             this.SDRegionTextBox = new System.Windows.Forms.TextBox();
             this.SDCountryTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ContractStatusCB = new System.Windows.Forms.ComboBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.UpdateInfoButton = new System.Windows.Forms.ToolStripButton();
-            this.WorkingDepartmentCB = new System.Windows.Forms.ComboBox();
-            this.ContractStatusCB = new System.Windows.Forms.ComboBox();
-            this.FirstNameTextBox = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.PatronymicTextBox = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.SDNumberBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -526,9 +525,43 @@ namespace StaffDepartment
             this.WBSeriesCB.Size = new System.Drawing.Size(208, 25);
             this.WBSeriesCB.TabIndex = 4;
             // 
+            // PatronymicTextBox
+            // 
+            this.PatronymicTextBox.Location = new System.Drawing.Point(84, 67);
+            this.PatronymicTextBox.Name = "PatronymicTextBox";
+            this.PatronymicTextBox.ReadOnly = true;
+            this.PatronymicTextBox.Size = new System.Drawing.Size(219, 23);
+            this.PatronymicTextBox.TabIndex = 1;
+            // 
+            // FirstNameTextBox
+            // 
+            this.FirstNameTextBox.Location = new System.Drawing.Point(84, 39);
+            this.FirstNameTextBox.Name = "FirstNameTextBox";
+            this.FirstNameTextBox.ReadOnly = true;
+            this.FirstNameTextBox.Size = new System.Drawing.Size(219, 23);
+            this.FirstNameTextBox.TabIndex = 1;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(9, 42);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(35, 17);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Имя";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(8, 70);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(71, 17);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "Отчество";
+            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.SDNumberBox);
+            this.tabPage2.Controls.Add(this.ChangeSDButton);
             this.tabPage2.Controls.Add(this.WorkingDepartmentCB);
             this.tabPage2.Controls.Add(this.PostCB);
             this.tabPage2.Controls.Add(this.groupBox3);
@@ -538,7 +571,6 @@ namespace StaffDepartment
             this.tabPage2.Controls.Add(this.PersonellNumberTextBox);
             this.tabPage2.Controls.Add(this.PromotionsButton);
             this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.label30);
             this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
@@ -547,6 +579,27 @@ namespace StaffDepartment
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Рабочая информация";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // ChangeSDButton
+            // 
+            this.ChangeSDButton.Enabled = false;
+            this.ChangeSDButton.Location = new System.Drawing.Point(15, 112);
+            this.ChangeSDButton.Name = "ChangeSDButton";
+            this.ChangeSDButton.Size = new System.Drawing.Size(359, 30);
+            this.ChangeSDButton.TabIndex = 12;
+            this.ChangeSDButton.Text = "Изменить привязанный отдел кадров";
+            this.ChangeSDButton.UseVisualStyleBackColor = true;
+            this.ChangeSDButton.Click += new System.EventHandler(this.ChangeSDButton_Click);
+            // 
+            // WorkingDepartmentCB
+            // 
+            this.WorkingDepartmentCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.WorkingDepartmentCB.Enabled = false;
+            this.WorkingDepartmentCB.FormattingEnabled = true;
+            this.WorkingDepartmentCB.Location = new System.Drawing.Point(145, 76);
+            this.WorkingDepartmentCB.Name = "WorkingDepartmentCB";
+            this.WorkingDepartmentCB.Size = new System.Drawing.Size(281, 25);
+            this.WorkingDepartmentCB.TabIndex = 11;
             // 
             // PostCB
             // 
@@ -717,6 +770,21 @@ namespace StaffDepartment
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Трудовой договор";
             // 
+            // ContractStatusCB
+            // 
+            this.ContractStatusCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ContractStatusCB.Enabled = false;
+            this.ContractStatusCB.FormattingEnabled = true;
+            this.ContractStatusCB.Items.AddRange(new object[] {
+            "ожидает заключения",
+            "заключен",
+            "расторгнут"});
+            this.ContractStatusCB.Location = new System.Drawing.Point(199, 18);
+            this.ContractStatusCB.Name = "ContractStatusCB";
+            this.ContractStatusCB.Size = new System.Drawing.Size(169, 25);
+            this.ContractStatusCB.TabIndex = 11;
+            this.ContractStatusCB.SelectedIndexChanged += new System.EventHandler(this.ContractStatusCB_SelectedIndexChanged);
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
@@ -737,82 +805,6 @@ namespace StaffDepartment
             this.UpdateInfoButton.Size = new System.Drawing.Size(197, 23);
             this.UpdateInfoButton.Text = "Редактировать информацию";
             this.UpdateInfoButton.Click += new System.EventHandler(this.UpdateInfoButton_Click);
-            // 
-            // WorkingDepartmentCB
-            // 
-            this.WorkingDepartmentCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.WorkingDepartmentCB.Enabled = false;
-            this.WorkingDepartmentCB.FormattingEnabled = true;
-            this.WorkingDepartmentCB.Location = new System.Drawing.Point(145, 76);
-            this.WorkingDepartmentCB.Name = "WorkingDepartmentCB";
-            this.WorkingDepartmentCB.Size = new System.Drawing.Size(281, 25);
-            this.WorkingDepartmentCB.TabIndex = 11;
-            // 
-            // ContractStatusCB
-            // 
-            this.ContractStatusCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ContractStatusCB.Enabled = false;
-            this.ContractStatusCB.FormattingEnabled = true;
-            this.ContractStatusCB.Items.AddRange(new object[] {
-            "ожидает заключения",
-            "заключен",
-            "расторгнут"});
-            this.ContractStatusCB.Location = new System.Drawing.Point(199, 18);
-            this.ContractStatusCB.Name = "ContractStatusCB";
-            this.ContractStatusCB.Size = new System.Drawing.Size(169, 25);
-            this.ContractStatusCB.TabIndex = 11;
-            // 
-            // FirstNameTextBox
-            // 
-            this.FirstNameTextBox.Location = new System.Drawing.Point(84, 39);
-            this.FirstNameTextBox.Name = "FirstNameTextBox";
-            this.FirstNameTextBox.ReadOnly = true;
-            this.FirstNameTextBox.Size = new System.Drawing.Size(219, 23);
-            this.FirstNameTextBox.TabIndex = 1;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(9, 42);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(35, 17);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Имя";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(8, 70);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(71, 17);
-            this.label29.TabIndex = 0;
-            this.label29.Text = "Отчество";
-            // 
-            // PatronymicTextBox
-            // 
-            this.PatronymicTextBox.Location = new System.Drawing.Point(84, 67);
-            this.PatronymicTextBox.Name = "PatronymicTextBox";
-            this.PatronymicTextBox.ReadOnly = true;
-            this.PatronymicTextBox.Size = new System.Drawing.Size(219, 23);
-            this.PatronymicTextBox.TabIndex = 1;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(12, 116);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(162, 17);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "Выбрать отдел кадров ";
-            // 
-            // SDNumberBox
-            // 
-            this.SDNumberBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SDNumberBox.FormattingEnabled = true;
-            this.SDNumberBox.Location = new System.Drawing.Point(205, 113);
-            this.SDNumberBox.Name = "SDNumberBox";
-            this.SDNumberBox.Size = new System.Drawing.Size(53, 25);
-            this.SDNumberBox.TabIndex = 12;
             // 
             // FileForm
             // 
@@ -915,7 +907,6 @@ namespace StaffDepartment
         private System.Windows.Forms.TextBox PatronymicTextBox;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.ComboBox SDNumberBox;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Button ChangeSDButton;
     }
 }
