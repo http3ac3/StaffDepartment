@@ -15,6 +15,7 @@ namespace StaffDepartment
     {
         private SqlConnection connection;
         private LoginForm loginForm;
+        private int deleteRowIndex;
         public DirectorForm(SqlConnection connection, LoginForm loginForm)
         {
             this.connection = connection;
@@ -29,6 +30,7 @@ namespace StaffDepartment
             DataSet dataSet = new DataSet();
             adapter.Fill(dataSet);
             PersonalFileDataGrid.DataSource = dataSet.Tables[0];
+            WorkingRadioButton.Checked = true;
         }
         private void DirectorForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -91,6 +93,31 @@ namespace StaffDepartment
         private void PersonalFileJournalButton_Click(object sender, EventArgs e)
         {
             new PersonalFileJournal(connection).Show();
+        }
+
+        private void PersonalFileDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DeleteButton.Enabled = true;
+            deleteRowIndex = e.RowIndex;
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            string lastName = PersonalFileDataGrid.Rows[deleteRowIndex].Cells[0].Value.ToString();
+            string firstName = PersonalFileDataGrid.Rows[deleteRowIndex].Cells[1].Value.ToString();
+            var res = MessageBox.Show($"Вы действительно хотите удалить личное дело об {lastName} {firstName}?", "Удаление данных", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (res == DialogResult.Yes)
+            {
+                string wbSeries = PersonalFileDataGrid.Rows[deleteRowIndex].Cells[3].Value.ToString();
+                string wbNumber = PersonalFileDataGrid.Rows[deleteRowIndex].Cells[4].Value.ToString();
+
+                new SqlCommand($"DELETE FROM Personal_File WHERE wb_series = '{wbSeries}' AND wb_number = '{wbNumber}'", connection).ExecuteNonQuery();
+                MessageBox.Show($"Данные об {lastName} {firstName} были успешно удалены! Удаленная информация находится в журнале изменений личных дел", 
+                    "Удаление личного дела", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                RefreshPersonalFileDataGrid();
+            }
         }
     }
 }

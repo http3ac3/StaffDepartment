@@ -136,6 +136,7 @@ namespace StaffDepartment
             this.DeleteButton.TabIndex = 3;
             this.DeleteButton.Text = "Удалить запись";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // InsertButton
             // 
@@ -168,6 +169,7 @@ namespace StaffDepartment
             this.PersonalFileDataGrid.RowTemplate.Height = 24;
             this.PersonalFileDataGrid.Size = new System.Drawing.Size(640, 436);
             this.PersonalFileDataGrid.TabIndex = 0;
+            this.PersonalFileDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PersonalFileDataGrid_CellClick);
             this.PersonalFileDataGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PersonalFileDataGrid_CellMouseDoubleClick);
             // 
             // label1
