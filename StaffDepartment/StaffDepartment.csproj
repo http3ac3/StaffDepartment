@@ -52,6 +52,18 @@
     <Compile Include="AddPersonalFile.Designer.cs">
       <DependentUpon>AddPersonalFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPostForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPostForm.Designer.cs">
+      <DependentUpon>AddPostForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddWDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddWDForm.Designer.cs">
+      <DependentUpon>AddWDForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChooseStaffDepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +104,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddPersonalFile.resx">
       <DependentUpon>AddPersonalFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPostForm.resx">
+      <DependentUpon>AddPostForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddWDForm.resx">
+      <DependentUpon>AddWDForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChooseStaffDepartmentForm.resx">
       <DependentUpon>ChooseStaffDepartmentForm.cs</DependentUpon>

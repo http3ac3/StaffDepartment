@@ -43,21 +43,39 @@ namespace StaffDepartment
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.PostDataGridView = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DeletePostButton = new System.Windows.Forms.Button();
+            this.AddPostButton = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.WDDataGrid = new System.Windows.Forms.DataGridView();
+            this.DeleteWDButton = new System.Windows.Forms.Button();
+            this.AddWDButton = new System.Windows.Forms.Button();
             this.ControlDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.регистрацияПользователяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RegisterUserButton = new System.Windows.Forms.ToolStripMenuItem();
             this.PersonalFileJournalButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.EmployeeGroupsBox.SuspendLayout();
             this.PFDataGridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PersonalFileDataGrid)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PostDataGridView)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WDDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 26);
             this.tabControl1.Name = "tabControl1";
@@ -184,6 +202,10 @@ namespace StaffDepartment
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.DeletePostButton);
+            this.tabPage2.Controls.Add(this.AddPostButton);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.PostDataGridView);
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -203,11 +225,106 @@ namespace StaffDepartment
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // PostDataGridView
+            // 
+            this.PostDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.PostDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PostDataGridView.Location = new System.Drawing.Point(276, 34);
+            this.PostDataGridView.Name = "PostDataGridView";
+            this.PostDataGridView.Size = new System.Drawing.Size(639, 437);
+            this.PostDataGridView.TabIndex = 0;
+            this.PostDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PostDataGridView_CellClick);
+            this.PostDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PostDataGridView_CellDoubleClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(273, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(148, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Таблица должностей";
+            // 
+            // DeletePostButton
+            // 
+            this.DeletePostButton.Enabled = false;
+            this.DeletePostButton.Location = new System.Drawing.Point(6, 83);
+            this.DeletePostButton.Name = "DeletePostButton";
+            this.DeletePostButton.Size = new System.Drawing.Size(264, 43);
+            this.DeletePostButton.TabIndex = 4;
+            this.DeletePostButton.Text = "Удалить запись";
+            this.DeletePostButton.UseVisualStyleBackColor = true;
+            this.DeletePostButton.Click += new System.EventHandler(this.DeletePostButton_Click);
+            // 
+            // AddPostButton
+            // 
+            this.AddPostButton.Location = new System.Drawing.Point(6, 34);
+            this.AddPostButton.Name = "AddPostButton";
+            this.AddPostButton.Size = new System.Drawing.Size(264, 43);
+            this.AddPostButton.TabIndex = 5;
+            this.AddPostButton.Text = "Добавить запись";
+            this.AddPostButton.UseVisualStyleBackColor = true;
+            this.AddPostButton.Click += new System.EventHandler(this.AddPostButton_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.DeleteWDButton);
+            this.tabPage3.Controls.Add(this.AddWDButton);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.WDDataGrid);
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(923, 479);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Рабочие отделы";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(273, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(181, 17);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Таблица рабочих отделов";
+            // 
+            // WDDataGrid
+            // 
+            this.WDDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.WDDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.WDDataGrid.Location = new System.Drawing.Point(276, 34);
+            this.WDDataGrid.Name = "WDDataGrid";
+            this.WDDataGrid.Size = new System.Drawing.Size(639, 437);
+            this.WDDataGrid.TabIndex = 2;
+            this.WDDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WDDataGrid_CellClick);
+            this.WDDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WDDataGrid_CellDoubleClick);
+            // 
+            // DeleteWDButton
+            // 
+            this.DeleteWDButton.Enabled = false;
+            this.DeleteWDButton.Location = new System.Drawing.Point(6, 83);
+            this.DeleteWDButton.Name = "DeleteWDButton";
+            this.DeleteWDButton.Size = new System.Drawing.Size(264, 43);
+            this.DeleteWDButton.TabIndex = 6;
+            this.DeleteWDButton.Text = "Удалить запись";
+            this.DeleteWDButton.UseVisualStyleBackColor = true;
+            this.DeleteWDButton.Click += new System.EventHandler(this.DeleteWDButton_Click);
+            // 
+            // AddWDButton
+            // 
+            this.AddWDButton.Location = new System.Drawing.Point(6, 34);
+            this.AddWDButton.Name = "AddWDButton";
+            this.AddWDButton.Size = new System.Drawing.Size(264, 43);
+            this.AddWDButton.TabIndex = 7;
+            this.AddWDButton.Text = "Добавить запись";
+            this.AddWDButton.UseVisualStyleBackColor = true;
+            this.AddWDButton.Click += new System.EventHandler(this.AddWDButton_Click);
+            // 
             // ControlDropDownButton
             // 
             this.ControlDropDownButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.ControlDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.регистрацияПользователяToolStripMenuItem,
+            this.RegisterUserButton,
             this.PersonalFileJournalButton});
             this.ControlDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("ControlDropDownButton.Image")));
             this.ControlDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -215,11 +332,11 @@ namespace StaffDepartment
             this.ControlDropDownButton.Size = new System.Drawing.Size(97, 23);
             this.ControlDropDownButton.Text = "Управление";
             // 
-            // регистрацияПользователяToolStripMenuItem
+            // RegisterUserButton
             // 
-            this.регистрацияПользователяToolStripMenuItem.Name = "регистрацияПользователяToolStripMenuItem";
-            this.регистрацияПользователяToolStripMenuItem.Size = new System.Drawing.Size(278, 24);
-            this.регистрацияПользователяToolStripMenuItem.Text = "Регистрация пользователя";
+            this.RegisterUserButton.Name = "RegisterUserButton";
+            this.RegisterUserButton.Size = new System.Drawing.Size(278, 24);
+            this.RegisterUserButton.Text = "Регистрация пользователя";
             // 
             // PersonalFileJournalButton
             // 
@@ -227,6 +344,24 @@ namespace StaffDepartment
             this.PersonalFileJournalButton.Size = new System.Drawing.Size(278, 24);
             this.PersonalFileJournalButton.Text = "Журнал изменений личных дел";
             this.PersonalFileJournalButton.Click += new System.EventHandler(this.PersonalFileJournalButton_Click);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 26);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(923, 479);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Поощрения";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 26);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(923, 479);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Взыскания";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // DirectorForm
             // 
@@ -250,8 +385,14 @@ namespace StaffDepartment
             this.EmployeeGroupsBox.PerformLayout();
             this.PFDataGridPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PersonalFileDataGrid)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PostDataGridView)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WDDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,7 +414,18 @@ namespace StaffDepartment
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton ControlDropDownButton;
-        private System.Windows.Forms.ToolStripMenuItem регистрацияПользователяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem RegisterUserButton;
         private System.Windows.Forms.ToolStripMenuItem PersonalFileJournalButton;
+        private System.Windows.Forms.Button DeletePostButton;
+        private System.Windows.Forms.Button AddPostButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView PostDataGridView;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button DeleteWDButton;
+        private System.Windows.Forms.Button AddWDButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView WDDataGrid;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
     }
 }

@@ -794,7 +794,7 @@ namespace StaffDepartment
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddPersonalFile";
-            this.Text = "AddPersonalFile";
+            this.Text = "Добавление личного дела";
             this.Load += new System.EventHandler(this.AddPersonalFile_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

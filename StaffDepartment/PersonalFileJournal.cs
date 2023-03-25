@@ -36,6 +36,7 @@ namespace StaffDepartment
             {
                 new SqlCommand("DELETE FROM JPersonal_File", connection).ExecuteNonQuery();
                 MessageBox.Show("Журнал был успешно очищен!", "Очищение журнала", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             
         }
