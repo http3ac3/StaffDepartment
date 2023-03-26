@@ -62,7 +62,7 @@ namespace StaffDepartment
             "почетная грамота"});
             this.PromotionTypeCB.Location = new System.Drawing.Point(147, 10);
             this.PromotionTypeCB.Name = "PromotionTypeCB";
-            this.PromotionTypeCB.Size = new System.Drawing.Size(190, 25);
+            this.PromotionTypeCB.Size = new System.Drawing.Size(259, 25);
             this.PromotionTypeCB.TabIndex = 1;
             // 
             // label2

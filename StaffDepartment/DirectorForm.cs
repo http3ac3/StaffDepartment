@@ -46,6 +46,9 @@ namespace StaffDepartment
 
         public void RefreshPromotionDataGrid() =>
             PromotionDataGrid.DataSource = GetFilledDataSet("EXEC PromotionsInfo").Tables[0];
+
+        public void RefreshDiscActionsDataGrid() =>
+            DiscActionsDataGrid.DataSource = GetFilledDataSet("EXEC DiscActionsInfo").Tables[0];
         
         private void DirectorForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -65,6 +68,7 @@ namespace StaffDepartment
             RefreshPostDataGrid();
             RefreshWDDataGrid();
             RefreshPromotionDataGrid();
+            RefreshDiscActionsDataGrid();
         }
 
         private void WaitingAcceptingRadioButton_CheckedChanged(object sender, EventArgs e) =>
@@ -110,8 +114,8 @@ namespace StaffDepartment
                 MessageBox.Show($"Данные об {lastName} {firstName} были успешно удалены! Удаленная информация находится в журнале изменений личных дел", 
                     "Удаление личного дела", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 RefreshPersonalFileDataGrid();
-                DeleteButton.Enabled = false;
             }
+            DeleteButton.Enabled = false;
         }
 
         private void AddPostButton_Click(object sender, EventArgs e) => new AddPostForm(connection, this, false).Show();
@@ -192,7 +196,7 @@ namespace StaffDepartment
 
         private void AddPromotionButton_Click(object sender, EventArgs e)
         {
-            new AddPromotionForm(connection, this, false, 0).Show();
+            new AddPromotionForm(connection, this, false, 0, false).Show();
         }
 
         private void PromotionDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -223,5 +227,8 @@ namespace StaffDepartment
                 RefreshPromotionDataGrid();
             }
         }
+
+        private void AddDiscActionButton_Click(object sender, EventArgs e) =>
+            new AddPromotionForm(connection, this, false, 0, true).Show();
     }
 }

@@ -52,12 +52,16 @@ namespace StaffDepartment
             this.label3 = new System.Windows.Forms.Label();
             this.WDDataGrid = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.DeletePromotionButton = new System.Windows.Forms.Button();
             this.AddPromotionButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.PromotionDataGrid = new System.Windows.Forms.DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.DeleteDiscActionButton = new System.Windows.Forms.Button();
+            this.AddDiscActionButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.DiscActionsDataGrid = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.ControlDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.RegisterUserButton = new System.Windows.Forms.ToolStripMenuItem();
             this.PersonalFileJournalButton = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,8 +75,10 @@ namespace StaffDepartment
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WDDataGrid)).BeginInit();
             this.tabPage4.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PromotionDataGrid)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DiscActionsDataGrid)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -328,26 +334,6 @@ namespace StaffDepartment
             this.tabPage4.Text = "Поощрения";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 26);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(923, 479);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Взыскания";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ControlDropDownButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(931, 26);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
             // DeletePromotionButton
             // 
             this.DeletePromotionButton.Enabled = false;
@@ -387,6 +373,68 @@ namespace StaffDepartment
             this.PromotionDataGrid.Size = new System.Drawing.Size(639, 437);
             this.PromotionDataGrid.TabIndex = 8;
             this.PromotionDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PromotionDataGrid_CellClick);
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.DeleteDiscActionButton);
+            this.tabPage5.Controls.Add(this.AddDiscActionButton);
+            this.tabPage5.Controls.Add(this.label5);
+            this.tabPage5.Controls.Add(this.DiscActionsDataGrid);
+            this.tabPage5.Location = new System.Drawing.Point(4, 26);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(923, 479);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Взыскания";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // DeleteDiscActionButton
+            // 
+            this.DeleteDiscActionButton.Enabled = false;
+            this.DeleteDiscActionButton.Location = new System.Drawing.Point(7, 80);
+            this.DeleteDiscActionButton.Name = "DeleteDiscActionButton";
+            this.DeleteDiscActionButton.Size = new System.Drawing.Size(264, 43);
+            this.DeleteDiscActionButton.TabIndex = 14;
+            this.DeleteDiscActionButton.Text = "Удалить запись";
+            this.DeleteDiscActionButton.UseVisualStyleBackColor = true;
+            // 
+            // AddDiscActionButton
+            // 
+            this.AddDiscActionButton.Location = new System.Drawing.Point(7, 31);
+            this.AddDiscActionButton.Name = "AddDiscActionButton";
+            this.AddDiscActionButton.Size = new System.Drawing.Size(264, 43);
+            this.AddDiscActionButton.TabIndex = 15;
+            this.AddDiscActionButton.Text = "Добавить запись";
+            this.AddDiscActionButton.UseVisualStyleBackColor = true;
+            this.AddDiscActionButton.Click += new System.EventHandler(this.AddDiscActionButton_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(274, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(231, 17);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Таблица поощрений сотрудников";
+            // 
+            // DiscActionsDataGrid
+            // 
+            this.DiscActionsDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DiscActionsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DiscActionsDataGrid.Location = new System.Drawing.Point(277, 31);
+            this.DiscActionsDataGrid.Name = "DiscActionsDataGrid";
+            this.DiscActionsDataGrid.Size = new System.Drawing.Size(639, 437);
+            this.DiscActionsDataGrid.TabIndex = 12;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ControlDropDownButton});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(931, 26);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // ControlDropDownButton
             // 
@@ -443,9 +491,12 @@ namespace StaffDepartment
             ((System.ComponentModel.ISupportInitialize)(this.WDDataGrid)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PromotionDataGrid)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DiscActionsDataGrid)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PromotionDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,5 +535,9 @@ namespace StaffDepartment
         private System.Windows.Forms.Button AddPromotionButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView PromotionDataGrid;
+        private System.Windows.Forms.Button DeleteDiscActionButton;
+        private System.Windows.Forms.Button AddDiscActionButton;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView DiscActionsDataGrid;
     }
 }

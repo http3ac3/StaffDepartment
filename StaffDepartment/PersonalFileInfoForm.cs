@@ -48,7 +48,7 @@ namespace StaffDepartment
             for (int i = 0; i < addPromotionForm.EmployeesDataGrid.Rows.Count; i++)
             {
                 var row = addPromotionForm.EmployeesDataGrid.Rows[i];
-                if (row.Cells[1].Value.ToString() == wbSeries && row.Cells[2].Value.ToString() == wbNumber)
+                if (row.Cells[2].Value.ToString() == wbSeries && row.Cells[3].Value.ToString() == wbNumber)
                 {
                     MessageBox.Show("Этот сотрудник уже был добавлен в список получателей поощрения", "Ошибка добавления сотрудника",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);

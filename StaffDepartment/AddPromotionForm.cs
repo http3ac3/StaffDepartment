@@ -17,8 +17,10 @@ namespace StaffDepartment
         DirectorForm directorForm;
         bool isEditing;
         int idPromotion;
-        public AddPromotionForm(SqlConnection connection, DirectorForm directorForm, bool isEditing, int idPromotion)
+        bool isDiscAction;
+        public AddPromotionForm(SqlConnection connection, DirectorForm directorForm, bool isEditing, int idPromotion, bool isDiscAction)
         {
+            this.isDiscAction = isDiscAction;
             this.connection = connection;
             this.directorForm = directorForm;
             this.isEditing = isEditing;
@@ -42,6 +44,18 @@ namespace StaffDepartment
 
         private void AddPromotionForm_Load(object sender, EventArgs e)
         {
+            if (isDiscAction)
+            {
+                PromotionTypeCB.Items.Clear();
+                string[] items = { "замечание", "выговор", "увольнение по соответствующим основаниям" };
+                PromotionTypeCB.Items.AddRange(items);
+                label1.Text = "Тип взыскания";
+                label2.Text = "Дата вынесения";
+                label3.Text = "Опишите причину взыскания";
+                label4.Text = "Сотрудники, которым будет вынесено взыскание";
+                this.Text = "Добавление взыскания";
+                AddPromotionButton.Text = "Добавить взыскание";
+            }
             PromotionTypeCB.SelectedIndex = 0;
             PromotionDateTB.Text = DateTime.Now.ToString("d");
             EmployeesDataGrid.Columns.AddRange(
@@ -53,21 +67,42 @@ namespace StaffDepartment
 
         private void AddPromotionButton_Click(object sender, EventArgs e)
         {
-            new SqlCommand($"INSERT INTO Promotion VALUES ('{PromotionTypeCB.Text}', '{ReasonTB.Text}', '{PromotionDateTB.Text}')", connection)
-                .ExecuteNonQuery();
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT TOP 1 id_promotion FROM Promotion ORDER BY id_promotion DESC", connection);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            string idPromotion = ds.Tables[0].Rows[0][0].ToString();
-            for (int i = 0; i < EmployeesDataGrid.Rows.Count; i++)
+            if (!isDiscAction)
             {
-                string wbSeries = EmployeesDataGrid.Rows[i].Cells[2].Value.ToString();
-                string wbNumber = EmployeesDataGrid.Rows[i].Cells[3].Value.ToString();
-                new SqlCommand($"INSERT INTO Personal_File_Promotion VALUES ({idPromotion}, {GetFileIdByWB(wbSeries, wbNumber)})", connection)
-                    .ExecuteNonQuery();              
+                new SqlCommand($"INSERT INTO Promotion VALUES ('{PromotionTypeCB.Text}', '{ReasonTB.Text}', '{PromotionDateTB.Text}')", connection)
+                .ExecuteNonQuery();
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT TOP 1 id_promotion FROM Promotion ORDER BY id_promotion DESC", connection);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                string idPromotion = ds.Tables[0].Rows[0][0].ToString();
+                for (int i = 0; i < EmployeesDataGrid.Rows.Count; i++)
+                {
+                    string wbSeries = EmployeesDataGrid.Rows[i].Cells[2].Value.ToString();
+                    string wbNumber = EmployeesDataGrid.Rows[i].Cells[3].Value.ToString();
+                    new SqlCommand($"INSERT INTO Personal_File_Promotion VALUES ({idPromotion}, {GetFileIdByWB(wbSeries, wbNumber)})", connection)
+                        .ExecuteNonQuery();
+                }
+                directorForm.RefreshPromotionDataGrid();
             }
-            directorForm.RefreshPromotionDataGrid();
-            
+            else
+            {
+                new SqlCommand($"INSERT INTO Disciplinary_Action VALUES " +
+                    $"('{PromotionTypeCB.Text}', '{ReasonTB.Text}', '{PromotionDateTB.Text}')", connection)
+                .ExecuteNonQuery();
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT TOP 1 id_action FROM Disciplinary_Action ORDER BY id_action DESC", connection);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                string idAction = ds.Tables[0].Rows[0][0].ToString();
+                for (int i = 0; i < EmployeesDataGrid.Rows.Count; i++)
+                {
+                    string wbSeries = EmployeesDataGrid.Rows[i].Cells[2].Value.ToString();
+                    string wbNumber = EmployeesDataGrid.Rows[i].Cells[3].Value.ToString();
+                    new SqlCommand($"INSERT INTO Personal_File_Disciplinary_Action VALUES ({idAction}, {GetFileIdByWB(wbSeries, wbNumber)})", connection)
+                        .ExecuteNonQuery();
+                }
+                directorForm.RefreshDiscActionsDataGrid();
+            }
+
             Close();
         }
     }
