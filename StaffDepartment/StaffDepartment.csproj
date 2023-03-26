@@ -64,6 +64,12 @@
     <Compile Include="AddPromotionForm.Designer.cs">
       <DependentUpon>AddPromotionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddStaffDepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStaffDepartmentForm.Designer.cs">
+      <DependentUpon>AddStaffDepartmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddWDForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddPromotionForm.resx">
       <DependentUpon>AddPromotionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddStaffDepartmentForm.resx">
+      <DependentUpon>AddStaffDepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddWDForm.resx">
       <DependentUpon>AddWDForm.cs</DependentUpon>

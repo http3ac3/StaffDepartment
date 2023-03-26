@@ -62,6 +62,11 @@ namespace StaffDepartment
             this.label5 = new System.Windows.Forms.Label();
             this.DiscActionsDataGrid = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.DeleteSDButton = new System.Windows.Forms.Button();
+            this.AddSDButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.StaffDepartmentDataGrid = new System.Windows.Forms.DataGridView();
             this.ControlDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.RegisterUserButton = new System.Windows.Forms.ToolStripMenuItem();
             this.PersonalFileJournalButton = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,6 +84,8 @@ namespace StaffDepartment
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DiscActionsDataGrid)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StaffDepartmentDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -88,6 +95,7 @@ namespace StaffDepartment
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 26);
             this.tabControl1.Name = "tabControl1";
@@ -396,6 +404,7 @@ namespace StaffDepartment
             this.DeleteDiscActionButton.TabIndex = 14;
             this.DeleteDiscActionButton.Text = "Удалить запись";
             this.DeleteDiscActionButton.UseVisualStyleBackColor = true;
+            this.DeleteDiscActionButton.Click += new System.EventHandler(this.DeleteDiscActionButton_Click);
             // 
             // AddDiscActionButton
             // 
@@ -412,9 +421,9 @@ namespace StaffDepartment
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(274, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(231, 17);
+            this.label5.Size = new System.Drawing.Size(226, 17);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Таблица поощрений сотрудников";
+            this.label5.Text = "Таблица взысканий сотрудников";
             // 
             // DiscActionsDataGrid
             // 
@@ -424,6 +433,7 @@ namespace StaffDepartment
             this.DiscActionsDataGrid.Name = "DiscActionsDataGrid";
             this.DiscActionsDataGrid.Size = new System.Drawing.Size(639, 437);
             this.DiscActionsDataGrid.TabIndex = 12;
+            this.DiscActionsDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DiscActionsDataGrid_CellClick);
             // 
             // toolStrip1
             // 
@@ -435,6 +445,59 @@ namespace StaffDepartment
             this.toolStrip1.Size = new System.Drawing.Size(931, 26);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.DeleteSDButton);
+            this.tabPage6.Controls.Add(this.AddSDButton);
+            this.tabPage6.Controls.Add(this.label6);
+            this.tabPage6.Controls.Add(this.StaffDepartmentDataGrid);
+            this.tabPage6.Location = new System.Drawing.Point(4, 26);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(923, 479);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Отделы кадров";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // DeleteSDButton
+            // 
+            this.DeleteSDButton.Enabled = false;
+            this.DeleteSDButton.Location = new System.Drawing.Point(7, 80);
+            this.DeleteSDButton.Name = "DeleteSDButton";
+            this.DeleteSDButton.Size = new System.Drawing.Size(264, 43);
+            this.DeleteSDButton.TabIndex = 18;
+            this.DeleteSDButton.Text = "Удалить запись";
+            this.DeleteSDButton.UseVisualStyleBackColor = true;
+            this.DeleteSDButton.Click += new System.EventHandler(this.DeleteSDButton_Click);
+            // 
+            // AddSDButton
+            // 
+            this.AddSDButton.Location = new System.Drawing.Point(7, 31);
+            this.AddSDButton.Name = "AddSDButton";
+            this.AddSDButton.Size = new System.Drawing.Size(264, 43);
+            this.AddSDButton.TabIndex = 19;
+            this.AddSDButton.Text = "Добавить запись";
+            this.AddSDButton.UseVisualStyleBackColor = true;
+            this.AddSDButton.Click += new System.EventHandler(this.AddSDButton_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(274, 11);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(173, 17);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Таблица отделов кадров";
+            // 
+            // StaffDepartmentDataGrid
+            // 
+            this.StaffDepartmentDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StaffDepartmentDataGrid.Location = new System.Drawing.Point(277, 31);
+            this.StaffDepartmentDataGrid.Name = "StaffDepartmentDataGrid";
+            this.StaffDepartmentDataGrid.Size = new System.Drawing.Size(639, 437);
+            this.StaffDepartmentDataGrid.TabIndex = 16;
+            this.StaffDepartmentDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.StaffDepartmentDataGrid_CellClick);
+            this.StaffDepartmentDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.StaffDepartmentDataGrid_CellDoubleClick);
             // 
             // ControlDropDownButton
             // 
@@ -497,6 +560,9 @@ namespace StaffDepartment
             ((System.ComponentModel.ISupportInitialize)(this.DiscActionsDataGrid)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StaffDepartmentDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -539,5 +605,10 @@ namespace StaffDepartment
         private System.Windows.Forms.Button AddDiscActionButton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView DiscActionsDataGrid;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button DeleteSDButton;
+        private System.Windows.Forms.Button AddSDButton;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.DataGridView StaffDepartmentDataGrid;
     }
 }

@@ -49,6 +49,9 @@ namespace StaffDepartment
 
         public void RefreshDiscActionsDataGrid() =>
             DiscActionsDataGrid.DataSource = GetFilledDataSet("EXEC DiscActionsInfo").Tables[0];
+
+        public void RefreshStaffDepartmentDataGrid() =>
+            StaffDepartmentDataGrid.DataSource = GetFilledDataSet("EXEC StaffDepartmentsInfo").Tables[0];
         
         private void DirectorForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -69,6 +72,7 @@ namespace StaffDepartment
             RefreshWDDataGrid();
             RefreshPromotionDataGrid();
             RefreshDiscActionsDataGrid();
+            RefreshStaffDepartmentDataGrid();
         }
 
         private void WaitingAcceptingRadioButton_CheckedChanged(object sender, EventArgs e) =>
@@ -194,16 +198,14 @@ namespace StaffDepartment
             DeleteWDButton.Enabled = false;
         }
 
-        private void AddPromotionButton_Click(object sender, EventArgs e)
-        {
+        private void AddPromotionButton_Click(object sender, EventArgs e) =>
             new AddPromotionForm(connection, this, false, 0, false).Show();
-        }
+        
 
         private void PromotionDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DeletePromotionButton.Enabled = true;
             deleteRowIndex = e.RowIndex;
-
         }
 
         private void DeletePromotionButton_Click(object sender, EventArgs e)
@@ -230,5 +232,61 @@ namespace StaffDepartment
 
         private void AddDiscActionButton_Click(object sender, EventArgs e) =>
             new AddPromotionForm(connection, this, false, 0, true).Show();
+
+        private void DiscActionsDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DeleteDiscActionButton.Enabled = true;
+            deleteRowIndex = e.RowIndex;
+        }
+
+        private void DeleteDiscActionButton_Click(object sender, EventArgs e)
+        {
+            var res = MessageBox.Show("Вы действительно хотите удалить запись о взыскании? У сотрудников, кому оно назначено, оно также исчезнет",
+                "Удаление взыскания", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            string idDiscAction = DiscActionsDataGrid.Rows[deleteRowIndex].Cells[0].Value.ToString();
+            if (res == DialogResult.Yes)
+            {
+                new SqlCommand($"DELETE FROM Personal_File_Disciplinary_Action WHERE id_action = {idDiscAction}", connection).ExecuteNonQuery();
+                new SqlCommand($"DELETE FROM Disciplinary_Action WHERE id_action = {idDiscAction}", connection).ExecuteNonQuery();
+                MessageBox.Show("Данные о взыскании были успешно удалены", "Удаление взыскания", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                RefreshDiscActionsDataGrid();
+            }
+            DeleteDiscActionButton.Enabled = false;
+        }
+
+        private void AddSDButton_Click(object sender, EventArgs e) =>
+            new AddStaffDepartmentForm(connection, this, false, 0).Show();
+        private void StaffDepartmentDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            deleteRowIndex = e.RowIndex;
+            DeleteSDButton.Enabled = true;
+        }
+
+        private void DeleteSDButton_Click(object sender, EventArgs e)
+        {
+            string phoneNumber = StaffDepartmentDataGrid.Rows[deleteRowIndex].Cells[8].Value.ToString();
+            var res = MessageBox.Show("Вы действительно хотите удалить выбранный отдел кадров?", "Удаление отдела кадров", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (res == DialogResult.Yes)
+            {
+                try
+                {
+                    new SqlCommand($"DELETE FROM Staff_Department WHERE phone_number = '{phoneNumber}'", connection).ExecuteNonQuery();
+                    MessageBox.Show("Запись была успешно удалена", "Удаление отдела кадров", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshStaffDepartmentDataGrid();
+                }
+                catch
+                {
+                    MessageBox.Show("Прежде чем удалить выбранный отдел кадров, назначьте привязанных к нему сотрудников в новый", 
+                        "Ошибка удаления отдела кадров", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            DeleteSDButton.Enabled = false;
+        }
+
+        private void StaffDepartmentDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e) =>
+            new AddStaffDepartmentForm(connection, this, true, e.RowIndex).Show();
     }
 }
