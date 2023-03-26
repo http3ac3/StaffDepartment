@@ -70,6 +70,7 @@ namespace StaffDepartment
             this.ControlDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.RegisterUserButton = new System.Windows.Forms.ToolStripMenuItem();
             this.PersonalFileJournalButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.EmployeeGroupsBox.SuspendLayout();
@@ -96,6 +97,7 @@ namespace StaffDepartment
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 26);
             this.tabControl1.Name = "tabControl1";
@@ -524,6 +526,15 @@ namespace StaffDepartment
             this.PersonalFileJournalButton.Text = "Журнал изменений личных дел";
             this.PersonalFileJournalButton.Click += new System.EventHandler(this.PersonalFileJournalButton_Click);
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Location = new System.Drawing.Point(4, 26);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(923, 479);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Дипломы сотрудников";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
             // DirectorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -610,5 +621,6 @@ namespace StaffDepartment
         private System.Windows.Forms.Button AddSDButton;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.DataGridView StaffDepartmentDataGrid;
+        private System.Windows.Forms.TabPage tabPage7;
     }
 }
