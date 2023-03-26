@@ -17,6 +17,7 @@ namespace StaffDepartment
         private LoginForm loginForm;
 
         private int deleteRowIndex;
+
         public DirectorForm(SqlConnection connection, LoginForm loginForm)
         {
             this.connection = connection;
@@ -42,6 +43,9 @@ namespace StaffDepartment
 
         public void RefreshWDDataGrid() =>
             WDDataGrid.DataSource = GetFilledDataSet("SELECT 'Рабочий отдел' = work_department_name FROM Work_Department").Tables[0];
+
+        public void RefreshPromotionDataGrid() =>
+            PromotionDataGrid.DataSource = GetFilledDataSet("EXEC PromotionsInfo").Tables[0];
         
         private void DirectorForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -60,6 +64,7 @@ namespace StaffDepartment
             RefreshPersonalFileDataGrid();
             RefreshPostDataGrid();
             RefreshWDDataGrid();
+            RefreshPromotionDataGrid();
         }
 
         private void WaitingAcceptingRadioButton_CheckedChanged(object sender, EventArgs e) =>
@@ -183,6 +188,40 @@ namespace StaffDepartment
                 }
             }
             DeleteWDButton.Enabled = false;
+        }
+
+        private void AddPromotionButton_Click(object sender, EventArgs e)
+        {
+            new AddPromotionForm(connection, this, false, 0).Show();
+        }
+
+        private void PromotionDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DeletePromotionButton.Enabled = true;
+            deleteRowIndex = e.RowIndex;
+
+        }
+
+        private void DeletePromotionButton_Click(object sender, EventArgs e)
+        {
+            var res = MessageBox.Show("Вы действительно хотите удалить запись о поощрении? У сотрудников, кому оно назначено, она также исчезнет", 
+                "Удаление поощрения", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            string idPromotion = PromotionDataGrid.Rows[deleteRowIndex].Cells[0].Value.ToString();
+
+            string[] filesId = new string[int.Parse(PromotionDataGrid.Rows[deleteRowIndex].Cells[3].Value.ToString())];
+            DataSet filesIdDataSet = GetFilledDataSet($"GetFileByPromotion {idPromotion}");
+
+            for (int i = 0; i < filesIdDataSet.Tables[0].Rows.Count; i++)
+                filesId[i] = filesIdDataSet.Tables[0].Rows[i][0].ToString();
+            
+            if (res == DialogResult.Yes)
+            {
+                new SqlCommand($"DELETE FROM Personal_File_Promotion WHERE id_promotion = {idPromotion}", connection).ExecuteNonQuery();
+                new SqlCommand($"DELETE FROM Promotion WHERE id_promotion = {idPromotion}", connection).ExecuteNonQuery();
+                MessageBox.Show("Данные об поощрении были успешно удалены", "Удаление поощрения", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                RefreshPromotionDataGrid();
+            }
         }
     }
 }

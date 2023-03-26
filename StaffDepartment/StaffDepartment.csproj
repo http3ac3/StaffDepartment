@@ -58,6 +58,12 @@
     <Compile Include="AddPostForm.Designer.cs">
       <DependentUpon>AddPostForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPromotionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPromotionForm.Designer.cs">
+      <DependentUpon>AddPromotionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddWDForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,12 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PersonalFileInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonalFileInfoForm.Designer.cs">
+      <DependentUpon>PersonalFileInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonalFileJournal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddPostForm.resx">
       <DependentUpon>AddPostForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPromotionForm.resx">
+      <DependentUpon>AddPromotionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddWDForm.resx">
       <DependentUpon>AddWDForm.cs</DependentUpon>
@@ -125,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalFileInfoForm.resx">
+      <DependentUpon>PersonalFileInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonalFileJournal.resx">
       <DependentUpon>PersonalFileJournal.cs</DependentUpon>
