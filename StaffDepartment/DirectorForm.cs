@@ -16,10 +16,12 @@ namespace StaffDepartment
         private SqlConnection connection;
         private LoginForm loginForm;
 
+        private bool isVisitor;
         private int deleteRowIndex;
 
-        public DirectorForm(SqlConnection connection, LoginForm loginForm)
+        public DirectorForm(SqlConnection connection, LoginForm loginForm, bool isVisitor)
         {
+            this.isVisitor = isVisitor;
             this.connection = connection;
             this.loginForm = loginForm;
             InitializeComponent();
@@ -70,6 +72,16 @@ namespace StaffDepartment
 
         private void DirectorForm_Load(object sender, EventArgs e)
         {
+            if (isVisitor)
+            {
+                this.Text = "Отдел кадров : Посетитель";
+                foreach (var tabPage in tabControl1.Controls.OfType<TabPage>()) 
+                    foreach (var button in tabPage.Controls.OfType<Button>())
+                    button.Enabled = false;
+
+                RegisterUserButton.Enabled = false;
+                PersonalFileJournalButton.Enabled = false;
+            }
             RefreshPersonalFileDataGrid();
             RefreshPostDataGrid();
             RefreshWDDataGrid();
@@ -102,9 +114,13 @@ namespace StaffDepartment
 
         private void PersonalFileDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DeleteButton.Enabled = true;
-            deleteRowIndex = e.RowIndex;
+            if (!isVisitor)
+            {
+                DeleteButton.Enabled = true;
+                deleteRowIndex = e.RowIndex;
+            }
         }
+
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
@@ -130,8 +146,12 @@ namespace StaffDepartment
 
         private void PostDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DeletePostButton.Enabled = true;
-            deleteRowIndex = e.RowIndex;
+            if (!isVisitor)
+            {
+                DeletePostButton.Enabled = true;
+                deleteRowIndex = e.RowIndex;
+            }
+            
         }
 
         private void DeletePostButton_Click(object sender, EventArgs e)
@@ -173,8 +193,12 @@ namespace StaffDepartment
 
         private void WDDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            deleteRowIndex = e.RowIndex;
-            DeleteWDButton.Enabled = true;
+            if (!isVisitor)
+            {
+                deleteRowIndex = e.RowIndex;
+                DeleteWDButton.Enabled = true;
+            }
+           
         }
 
         private void DeleteWDButton_Click(object sender, EventArgs e)
@@ -208,8 +232,12 @@ namespace StaffDepartment
 
         private void PromotionDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DeletePromotionButton.Enabled = true;
-            deleteRowIndex = e.RowIndex;
+            if (!isVisitor)
+            {
+                DeletePromotionButton.Enabled = true;
+                deleteRowIndex = e.RowIndex;
+            }
+            
         }
 
         private void DeletePromotionButton_Click(object sender, EventArgs e)
@@ -239,9 +267,13 @@ namespace StaffDepartment
 
         private void DiscActionsDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DeleteDiscActionButton.Enabled = true;
-            deleteRowIndex = e.RowIndex;
+            if (!isVisitor)
+            {
+                DeleteDiscActionButton.Enabled = true;
+                deleteRowIndex = e.RowIndex;
+            }
         }
+
 
         private void DeleteDiscActionButton_Click(object sender, EventArgs e)
         {
@@ -263,8 +295,12 @@ namespace StaffDepartment
             new AddStaffDepartmentForm(connection, this, false, 0).Show();
         private void StaffDepartmentDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            deleteRowIndex = e.RowIndex;
-            DeleteSDButton.Enabled = true;
+            if (!isVisitor)
+            {
+                deleteRowIndex = e.RowIndex;
+                DeleteSDButton.Enabled = true;
+            }
+            
         }
 
         private void DeleteSDButton_Click(object sender, EventArgs e)
@@ -298,8 +334,11 @@ namespace StaffDepartment
 
         private void DiplomaDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DeleteDiplomaButton.Enabled = true;
-            deleteRowIndex = e.RowIndex;
+            if (!isVisitor)
+            {
+                DeleteDiplomaButton.Enabled = true;
+                deleteRowIndex = e.RowIndex;
+            }
         }
 
         private void DeleteDiplomaButton_Click(object sender, EventArgs e)

@@ -64,11 +64,12 @@ namespace StaffDepartment
             switch (role)
             {
                 case Role.DIRECTOR:
-                    new DirectorForm(connection, this).Show();
+                    new DirectorForm(connection, this, false).Show();
                     this.Hide();
                     break;
                 case Role.VISITOR:
-
+                    new DirectorForm(connection, this, true).Show();
+                    this.Hide();
                     break;
             }
 
