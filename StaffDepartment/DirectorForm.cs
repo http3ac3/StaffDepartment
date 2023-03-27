@@ -52,6 +52,9 @@ namespace StaffDepartment
 
         public void RefreshStaffDepartmentDataGrid() =>
             StaffDepartmentDataGrid.DataSource = GetFilledDataSet("EXEC StaffDepartmentsInfo").Tables[0];
+
+        public void RefreshDiplomaDataGrid() =>
+            DiplomaDataGrid.DataSource = GetFilledDataSet("EXEC EducationDiplomasInfo").Tables[0];
         
         private void DirectorForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -73,6 +76,7 @@ namespace StaffDepartment
             RefreshPromotionDataGrid();
             RefreshDiscActionsDataGrid();
             RefreshStaffDepartmentDataGrid();
+            RefreshDiplomaDataGrid();
         }
 
         private void WaitingAcceptingRadioButton_CheckedChanged(object sender, EventArgs e) =>
@@ -288,5 +292,42 @@ namespace StaffDepartment
 
         private void StaffDepartmentDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e) =>
             new AddStaffDepartmentForm(connection, this, true, e.RowIndex).Show();
+
+        private void AddDiplomaButton_Click(object sender, EventArgs e) =>
+            new AddDiplomaForm(connection, this, false, "", "").Show();
+
+        private void DiplomaDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DeleteDiplomaButton.Enabled = true;
+            deleteRowIndex = e.RowIndex;
+        }
+
+        private void DeleteDiplomaButton_Click(object sender, EventArgs e)
+        {
+            string diplomaSeries = DiplomaDataGrid.Rows[deleteRowIndex].Cells[2].Value.ToString();
+            string diplomaNumber = DiplomaDataGrid.Rows[deleteRowIndex].Cells[3].Value.ToString();
+
+            var res = MessageBox.Show("Вы действительно хотите удалить выбранный диплом? У сотрудника, который его подал, он также будет удален",
+                "Удаление диплома", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (res == DialogResult.Yes)
+            {
+                try
+                {
+                    new SqlCommand($"DELETE FROM Education_Diploma WHERE diploma_series = '{diplomaSeries}' AND diploma_number = '{diplomaNumber}'",
+                        connection).ExecuteNonQuery();
+                    MessageBox.Show("Запись была успешно удалена", "Удаление дпилома", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshDiplomaDataGrid();
+                }
+                catch
+                { }
+            }
+            DeleteSDButton.Enabled = false;
+        }
+
+        private void DiplomaDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e) =>
+            new AddDiplomaForm(connection, this, true,
+                DiplomaDataGrid.Rows[e.RowIndex].Cells[2].Value.ToString(),
+                DiplomaDataGrid.Rows[e.RowIndex].Cells[3].Value.ToString()).Show();
     }
 }

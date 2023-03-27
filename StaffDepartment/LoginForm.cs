@@ -39,8 +39,8 @@ namespace StaffDepartment
         }
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            // string connectionString = GetRemoteConnectionString(LoginTextBox.Text, PasswordTextBox.Text);
-            string connectionString = GetRemoteConnectionString("Abramov_Director", "123456");
+            string connectionString = GetRemoteConnectionString(LoginTextBox.Text, PasswordTextBox.Text);
+            //string connectionString = GetRemoteConnectionString("Abramov_Director", "123456");
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -58,6 +58,7 @@ namespace StaffDepartment
             catch
             {
                 MessageBox.Show("Введеные логин и/или пароль неверные! Проверьте введенные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             
             switch (role)

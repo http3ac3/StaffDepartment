@@ -156,7 +156,9 @@ namespace StaffDepartment
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "AddPromotionForm";
             this.Text = "Добавление поощрения";
             this.Load += new System.EventHandler(this.AddPromotionForm_Load);

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDiplomaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDiplomaForm.Designer.cs">
+      <DependentUpon>AddDiplomaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPersonalFile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     <Compile Include="AddWDForm.Designer.cs">
       <DependentUpon>AddWDForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllFilesInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllFilesInfoForm.Designer.cs">
+      <DependentUpon>AllFilesInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChooseStaffDepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +99,12 @@
     </Compile>
     <Compile Include="DirectorForm.Designer.cs">
       <DependentUpon>DirectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileEducationDiplomasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileEducationDiplomasForm.Designer.cs">
+      <DependentUpon>FileEducationDiplomasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FileForm.cs">
       <SubType>Form</SubType>
@@ -120,6 +138,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddDiplomaForm.resx">
+      <DependentUpon>AddDiplomaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPersonalFile.resx">
       <DependentUpon>AddPersonalFile.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,11 +156,17 @@
     <EmbeddedResource Include="AddWDForm.resx">
       <DependentUpon>AddWDForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AllFilesInfoForm.resx">
+      <DependentUpon>AllFilesInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChooseStaffDepartmentForm.resx">
       <DependentUpon>ChooseStaffDepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DirectorForm.resx">
       <DependentUpon>DirectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileEducationDiplomasForm.resx">
+      <DependentUpon>FileEducationDiplomasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FileForm.resx">
       <DependentUpon>FileForm.cs</DependentUpon>

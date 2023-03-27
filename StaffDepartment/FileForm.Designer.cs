@@ -98,6 +98,7 @@ namespace StaffDepartment
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ContractStatusCB = new System.Windows.Forms.ComboBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.ViewEducationDiplomaButton = new System.Windows.Forms.Button();
             this.UpdateInfoButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -268,7 +269,7 @@ namespace StaffDepartment
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(384, 144);
+            this.label9.Location = new System.Drawing.Point(384, 115);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(154, 17);
             this.label9.TabIndex = 0;
@@ -276,7 +277,7 @@ namespace StaffDepartment
             // 
             // WBNumberTextBox
             // 
-            this.WBNumberTextBox.Location = new System.Drawing.Point(544, 172);
+            this.WBNumberTextBox.Location = new System.Drawing.Point(544, 143);
             this.WBNumberTextBox.Name = "WBNumberTextBox";
             this.WBNumberTextBox.ReadOnly = true;
             this.WBNumberTextBox.Size = new System.Drawing.Size(208, 23);
@@ -285,7 +286,7 @@ namespace StaffDepartment
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(384, 175);
+            this.label10.Location = new System.Drawing.Point(384, 146);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(156, 17);
             this.label10.TabIndex = 0;
@@ -293,7 +294,7 @@ namespace StaffDepartment
             // 
             // MCNumberTextBox
             // 
-            this.MCNumberTextBox.Location = new System.Drawing.Point(544, 204);
+            this.MCNumberTextBox.Location = new System.Drawing.Point(544, 175);
             this.MCNumberTextBox.Name = "MCNumberTextBox";
             this.MCNumberTextBox.ReadOnly = true;
             this.MCNumberTextBox.Size = new System.Drawing.Size(208, 23);
@@ -302,7 +303,7 @@ namespace StaffDepartment
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(384, 207);
+            this.label11.Location = new System.Drawing.Point(384, 178);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(124, 17);
             this.label11.TabIndex = 0;
@@ -310,7 +311,7 @@ namespace StaffDepartment
             // 
             // ExperienceTextBox
             // 
-            this.ExperienceTextBox.Location = new System.Drawing.Point(544, 236);
+            this.ExperienceTextBox.Location = new System.Drawing.Point(544, 207);
             this.ExperienceTextBox.Name = "ExperienceTextBox";
             this.ExperienceTextBox.ReadOnly = true;
             this.ExperienceTextBox.Size = new System.Drawing.Size(208, 23);
@@ -319,7 +320,7 @@ namespace StaffDepartment
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(384, 239);
+            this.label12.Location = new System.Drawing.Point(384, 210);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(135, 17);
             this.label12.TabIndex = 0;
@@ -470,6 +471,7 @@ namespace StaffDepartment
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.ViewEducationDiplomaButton);
             this.tabPage1.Controls.Add(this.WBSeriesCB);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.LastNameTextBox);
@@ -520,7 +522,7 @@ namespace StaffDepartment
             "ТК-IV",
             "ТК-V",
             "ТК-VI"});
-            this.WBSeriesCB.Location = new System.Drawing.Point(544, 142);
+            this.WBSeriesCB.Location = new System.Drawing.Point(544, 113);
             this.WBSeriesCB.Name = "WBSeriesCB";
             this.WBSeriesCB.Size = new System.Drawing.Size(208, 25);
             this.WBSeriesCB.TabIndex = 4;
@@ -796,6 +798,16 @@ namespace StaffDepartment
             this.toolStrip1.TabIndex = 10;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // ViewEducationDiplomaButton
+            // 
+            this.ViewEducationDiplomaButton.Location = new System.Drawing.Point(387, 251);
+            this.ViewEducationDiplomaButton.Name = "ViewEducationDiplomaButton";
+            this.ViewEducationDiplomaButton.Size = new System.Drawing.Size(365, 34);
+            this.ViewEducationDiplomaButton.TabIndex = 5;
+            this.ViewEducationDiplomaButton.Text = "Просмотреть дипломы сотрудника";
+            this.ViewEducationDiplomaButton.UseVisualStyleBackColor = true;
+            this.ViewEducationDiplomaButton.Click += new System.EventHandler(this.ViewEducationDiplomaButton_Click);
+            // 
             // UpdateInfoButton
             // 
             this.UpdateInfoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -814,7 +826,9 @@ namespace StaffDepartment
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "FileForm";
             this.Text = "Сведения о сотруднике";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FileForm_FormClosing);
@@ -840,7 +854,6 @@ namespace StaffDepartment
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox LastNameTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox CountryTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -903,10 +916,12 @@ namespace StaffDepartment
         private System.Windows.Forms.ComboBox PostCB;
         private System.Windows.Forms.ComboBox WorkingDepartmentCB;
         private System.Windows.Forms.ComboBox ContractStatusCB;
-        private System.Windows.Forms.TextBox FirstNameTextBox;
-        private System.Windows.Forms.TextBox PatronymicTextBox;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Button ChangeSDButton;
+        private System.Windows.Forms.Button ViewEducationDiplomaButton;
+        public System.Windows.Forms.TextBox LastNameTextBox;
+        public System.Windows.Forms.TextBox FirstNameTextBox;
+        public System.Windows.Forms.TextBox PatronymicTextBox;
     }
 }

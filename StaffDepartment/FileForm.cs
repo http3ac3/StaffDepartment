@@ -277,5 +277,8 @@ namespace StaffDepartment
                 WorkingDepartmentCB.SelectedIndex = WorkingDepartmentCB.Items.Count - 1;
             }
         }
+
+        private void ViewEducationDiplomaButton_Click(object sender, EventArgs e) =>
+            new FileEducationDiplomasForm(connection, this, wb_series, wb_number).Show();
     }
 }

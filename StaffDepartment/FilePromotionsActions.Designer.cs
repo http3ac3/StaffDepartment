@@ -49,9 +49,9 @@ namespace StaffDepartment
             this.ActionsDGV.AllowUserToDeleteRows = false;
             this.ActionsDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ActionsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ActionsDGV.Location = new System.Drawing.Point(12, 29);
+            this.ActionsDGV.Location = new System.Drawing.Point(12, 12);
             this.ActionsDGV.Name = "ActionsDGV";
-            this.ActionsDGV.Size = new System.Drawing.Size(627, 400);
+            this.ActionsDGV.Size = new System.Drawing.Size(627, 417);
             this.ActionsDGV.TabIndex = 1;
             // 
             // FilePromotionsActions
@@ -62,7 +62,9 @@ namespace StaffDepartment
             this.Controls.Add(this.ActionsDGV);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "FilePromotionsActions";
             this.Load += new System.EventHandler(this.FilePromotionsActions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ActionsDGV)).EndInit();

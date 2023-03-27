@@ -61,16 +61,20 @@ namespace StaffDepartment
             this.AddDiscActionButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.DiscActionsDataGrid = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.DeleteSDButton = new System.Windows.Forms.Button();
             this.AddSDButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.StaffDepartmentDataGrid = new System.Windows.Forms.DataGridView();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.DeleteDiplomaButton = new System.Windows.Forms.Button();
+            this.AddDiplomaButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.DiplomaDataGrid = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.ControlDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.RegisterUserButton = new System.Windows.Forms.ToolStripMenuItem();
             this.PersonalFileJournalButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.EmployeeGroupsBox.SuspendLayout();
@@ -84,9 +88,11 @@ namespace StaffDepartment
             ((System.ComponentModel.ISupportInitialize)(this.PromotionDataGrid)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DiscActionsDataGrid)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StaffDepartmentDataGrid)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DiplomaDataGrid)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -102,7 +108,7 @@ namespace StaffDepartment
             this.tabControl1.Location = new System.Drawing.Point(0, 26);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(931, 509);
+            this.tabControl1.Size = new System.Drawing.Size(1031, 509);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -114,7 +120,7 @@ namespace StaffDepartment
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(923, 479);
+            this.tabPage1.Size = new System.Drawing.Size(1023, 479);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Личные дела";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -194,20 +200,21 @@ namespace StaffDepartment
             this.PFDataGridPanel.Controls.Add(this.label1);
             this.PFDataGridPanel.Location = new System.Drawing.Point(275, 0);
             this.PFDataGridPanel.Name = "PFDataGridPanel";
-            this.PFDataGridPanel.Size = new System.Drawing.Size(640, 473);
+            this.PFDataGridPanel.Size = new System.Drawing.Size(740, 473);
             this.PFDataGridPanel.TabIndex = 2;
             // 
             // PersonalFileDataGrid
             // 
             this.PersonalFileDataGrid.AllowUserToAddRows = false;
             this.PersonalFileDataGrid.AllowUserToDeleteRows = false;
-            this.PersonalFileDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.PersonalFileDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.PersonalFileDataGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.PersonalFileDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PersonalFileDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PersonalFileDataGrid.Location = new System.Drawing.Point(0, 37);
             this.PersonalFileDataGrid.Name = "PersonalFileDataGrid";
             this.PersonalFileDataGrid.RowTemplate.Height = 24;
-            this.PersonalFileDataGrid.Size = new System.Drawing.Size(640, 436);
+            this.PersonalFileDataGrid.Size = new System.Drawing.Size(740, 436);
             this.PersonalFileDataGrid.TabIndex = 0;
             this.PersonalFileDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PersonalFileDataGrid_CellClick);
             this.PersonalFileDataGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PersonalFileDataGrid_CellMouseDoubleClick);
@@ -217,7 +224,7 @@ namespace StaffDepartment
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(640, 37);
+            this.label1.Size = new System.Drawing.Size(740, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "Таблица личных дел сотрудников";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -231,7 +238,7 @@ namespace StaffDepartment
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(923, 479);
+            this.tabPage2.Size = new System.Drawing.Size(1023, 479);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Должности";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -272,7 +279,7 @@ namespace StaffDepartment
             this.PostDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PostDataGridView.Location = new System.Drawing.Point(276, 34);
             this.PostDataGridView.Name = "PostDataGridView";
-            this.PostDataGridView.Size = new System.Drawing.Size(639, 437);
+            this.PostDataGridView.Size = new System.Drawing.Size(739, 437);
             this.PostDataGridView.TabIndex = 0;
             this.PostDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PostDataGridView_CellClick);
             this.PostDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PostDataGridView_CellDoubleClick);
@@ -285,7 +292,7 @@ namespace StaffDepartment
             this.tabPage3.Controls.Add(this.WDDataGrid);
             this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(923, 479);
+            this.tabPage3.Size = new System.Drawing.Size(1023, 479);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Рабочие отделы";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -326,7 +333,7 @@ namespace StaffDepartment
             this.WDDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.WDDataGrid.Location = new System.Drawing.Point(276, 34);
             this.WDDataGrid.Name = "WDDataGrid";
-            this.WDDataGrid.Size = new System.Drawing.Size(639, 437);
+            this.WDDataGrid.Size = new System.Drawing.Size(739, 437);
             this.WDDataGrid.TabIndex = 2;
             this.WDDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WDDataGrid_CellClick);
             this.WDDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WDDataGrid_CellDoubleClick);
@@ -339,7 +346,7 @@ namespace StaffDepartment
             this.tabPage4.Controls.Add(this.PromotionDataGrid);
             this.tabPage4.Location = new System.Drawing.Point(4, 26);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(923, 479);
+            this.tabPage4.Size = new System.Drawing.Size(1023, 479);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Поощрения";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -380,7 +387,7 @@ namespace StaffDepartment
             this.PromotionDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PromotionDataGrid.Location = new System.Drawing.Point(277, 31);
             this.PromotionDataGrid.Name = "PromotionDataGrid";
-            this.PromotionDataGrid.Size = new System.Drawing.Size(639, 437);
+            this.PromotionDataGrid.Size = new System.Drawing.Size(738, 437);
             this.PromotionDataGrid.TabIndex = 8;
             this.PromotionDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PromotionDataGrid_CellClick);
             // 
@@ -392,7 +399,7 @@ namespace StaffDepartment
             this.tabPage5.Controls.Add(this.DiscActionsDataGrid);
             this.tabPage5.Location = new System.Drawing.Point(4, 26);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(923, 479);
+            this.tabPage5.Size = new System.Drawing.Size(1023, 479);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Взыскания";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -433,20 +440,9 @@ namespace StaffDepartment
             this.DiscActionsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DiscActionsDataGrid.Location = new System.Drawing.Point(277, 31);
             this.DiscActionsDataGrid.Name = "DiscActionsDataGrid";
-            this.DiscActionsDataGrid.Size = new System.Drawing.Size(639, 437);
+            this.DiscActionsDataGrid.Size = new System.Drawing.Size(738, 437);
             this.DiscActionsDataGrid.TabIndex = 12;
             this.DiscActionsDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DiscActionsDataGrid_CellClick);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ControlDropDownButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(931, 26);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // tabPage6
             // 
@@ -456,7 +452,7 @@ namespace StaffDepartment
             this.tabPage6.Controls.Add(this.StaffDepartmentDataGrid);
             this.tabPage6.Location = new System.Drawing.Point(4, 26);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(923, 479);
+            this.tabPage6.Size = new System.Drawing.Size(1023, 479);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Отделы кадров";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -496,10 +492,75 @@ namespace StaffDepartment
             this.StaffDepartmentDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.StaffDepartmentDataGrid.Location = new System.Drawing.Point(277, 31);
             this.StaffDepartmentDataGrid.Name = "StaffDepartmentDataGrid";
-            this.StaffDepartmentDataGrid.Size = new System.Drawing.Size(639, 437);
+            this.StaffDepartmentDataGrid.Size = new System.Drawing.Size(738, 437);
             this.StaffDepartmentDataGrid.TabIndex = 16;
             this.StaffDepartmentDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.StaffDepartmentDataGrid_CellClick);
             this.StaffDepartmentDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.StaffDepartmentDataGrid_CellDoubleClick);
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.DeleteDiplomaButton);
+            this.tabPage7.Controls.Add(this.AddDiplomaButton);
+            this.tabPage7.Controls.Add(this.label7);
+            this.tabPage7.Controls.Add(this.DiplomaDataGrid);
+            this.tabPage7.Location = new System.Drawing.Point(4, 26);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(1023, 479);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Дипломы сотрудников";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // DeleteDiplomaButton
+            // 
+            this.DeleteDiplomaButton.Enabled = false;
+            this.DeleteDiplomaButton.Location = new System.Drawing.Point(7, 80);
+            this.DeleteDiplomaButton.Name = "DeleteDiplomaButton";
+            this.DeleteDiplomaButton.Size = new System.Drawing.Size(264, 43);
+            this.DeleteDiplomaButton.TabIndex = 8;
+            this.DeleteDiplomaButton.Text = "Удалить запись";
+            this.DeleteDiplomaButton.UseVisualStyleBackColor = true;
+            this.DeleteDiplomaButton.Click += new System.EventHandler(this.DeleteDiplomaButton_Click);
+            // 
+            // AddDiplomaButton
+            // 
+            this.AddDiplomaButton.Location = new System.Drawing.Point(7, 31);
+            this.AddDiplomaButton.Name = "AddDiplomaButton";
+            this.AddDiplomaButton.Size = new System.Drawing.Size(264, 43);
+            this.AddDiplomaButton.TabIndex = 9;
+            this.AddDiplomaButton.Text = "Добавить запись";
+            this.AddDiplomaButton.UseVisualStyleBackColor = true;
+            this.AddDiplomaButton.Click += new System.EventHandler(this.AddDiplomaButton_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(274, 11);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(246, 17);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Таблица представленных дипломов";
+            // 
+            // DiplomaDataGrid
+            // 
+            this.DiplomaDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.DiplomaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DiplomaDataGrid.Location = new System.Drawing.Point(277, 31);
+            this.DiplomaDataGrid.Name = "DiplomaDataGrid";
+            this.DiplomaDataGrid.Size = new System.Drawing.Size(737, 437);
+            this.DiplomaDataGrid.TabIndex = 6;
+            this.DiplomaDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DiplomaDataGrid_CellClick);
+            this.DiplomaDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DiplomaDataGrid_CellDoubleClick);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ControlDropDownButton});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1031, 26);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // ControlDropDownButton
             // 
@@ -526,20 +587,11 @@ namespace StaffDepartment
             this.PersonalFileJournalButton.Text = "Журнал изменений личных дел";
             this.PersonalFileJournalButton.Click += new System.EventHandler(this.PersonalFileJournalButton_Click);
             // 
-            // tabPage7
-            // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 26);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(923, 479);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Дипломы сотрудников";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
             // DirectorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 535);
+            this.ClientSize = new System.Drawing.Size(1031, 535);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
@@ -569,11 +621,14 @@ namespace StaffDepartment
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DiscActionsDataGrid)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StaffDepartmentDataGrid)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DiplomaDataGrid)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -622,5 +677,9 @@ namespace StaffDepartment
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.DataGridView StaffDepartmentDataGrid;
         private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.Button DeleteDiplomaButton;
+        private System.Windows.Forms.Button AddDiplomaButton;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView DiplomaDataGrid;
     }
 }

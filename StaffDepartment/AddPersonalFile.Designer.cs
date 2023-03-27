@@ -41,6 +41,9 @@ namespace StaffDepartment
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.MCNumberTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.WBNumberTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.BirthdayDateTB = new System.Windows.Forms.MaskedTextBox();
             this.PhoneNumberTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -60,9 +63,10 @@ namespace StaffDepartment
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.BirthdayDateTB = new System.Windows.Forms.MaskedTextBox();
-            this.WBNumberTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.MCNumberTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.PersonellNumberTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.ContractNotAcceptButton = new System.Windows.Forms.RadioButton();
+            this.ContractAcceptButton = new System.Windows.Forms.RadioButton();
+            this.AddButton = new System.Windows.Forms.Button();
             this.ChangeSDButton = new System.Windows.Forms.Button();
             this.WorkingDepartmentCB = new System.Windows.Forms.ComboBox();
             this.PostCB = new System.Windows.Forms.ComboBox();
@@ -93,10 +97,6 @@ namespace StaffDepartment
             this.label19 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.ContractAcceptButton = new System.Windows.Forms.RadioButton();
-            this.ContractNotAcceptButton = new System.Windows.Forms.RadioButton();
-            this.PersonellNumberTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.AddButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -246,6 +246,30 @@ namespace StaffDepartment
             this.label14.Size = new System.Drawing.Size(121, 17);
             this.label14.TabIndex = 7;
             this.label14.Text = "Номер телефона";
+            // 
+            // MCNumberTextBox
+            // 
+            this.MCNumberTextBox.Location = new System.Drawing.Point(506, 181);
+            this.MCNumberTextBox.Mask = "00000000";
+            this.MCNumberTextBox.Name = "MCNumberTextBox";
+            this.MCNumberTextBox.Size = new System.Drawing.Size(165, 23);
+            this.MCNumberTextBox.TabIndex = 22;
+            // 
+            // WBNumberTextBox
+            // 
+            this.WBNumberTextBox.Location = new System.Drawing.Point(506, 152);
+            this.WBNumberTextBox.Mask = "0000000";
+            this.WBNumberTextBox.Name = "WBNumberTextBox";
+            this.WBNumberTextBox.Size = new System.Drawing.Size(165, 23);
+            this.WBNumberTextBox.TabIndex = 22;
+            // 
+            // BirthdayDateTB
+            // 
+            this.BirthdayDateTB.Location = new System.Drawing.Point(506, 15);
+            this.BirthdayDateTB.Mask = "00-00-0000";
+            this.BirthdayDateTB.Name = "BirthdayDateTB";
+            this.BirthdayDateTB.Size = new System.Drawing.Size(165, 23);
+            this.BirthdayDateTB.TabIndex = 22;
             // 
             // PhoneNumberTextBox
             // 
@@ -428,29 +452,48 @@ namespace StaffDepartment
             this.tabPage2.Text = "Заполнение рабочей информации";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // BirthdayDateTB
+            // PersonellNumberTextBox
             // 
-            this.BirthdayDateTB.Location = new System.Drawing.Point(506, 15);
-            this.BirthdayDateTB.Mask = "00-00-0000";
-            this.BirthdayDateTB.Name = "BirthdayDateTB";
-            this.BirthdayDateTB.Size = new System.Drawing.Size(165, 23);
-            this.BirthdayDateTB.TabIndex = 22;
+            this.PersonellNumberTextBox.Location = new System.Drawing.Point(150, 43);
+            this.PersonellNumberTextBox.Mask = "ТН-000000";
+            this.PersonellNumberTextBox.Name = "PersonellNumberTextBox";
+            this.PersonellNumberTextBox.ReadOnly = true;
+            this.PersonellNumberTextBox.Size = new System.Drawing.Size(237, 23);
+            this.PersonellNumberTextBox.TabIndex = 25;
             // 
-            // WBNumberTextBox
+            // ContractNotAcceptButton
             // 
-            this.WBNumberTextBox.Location = new System.Drawing.Point(506, 152);
-            this.WBNumberTextBox.Mask = "0000000";
-            this.WBNumberTextBox.Name = "WBNumberTextBox";
-            this.WBNumberTextBox.Size = new System.Drawing.Size(165, 23);
-            this.WBNumberTextBox.TabIndex = 22;
+            this.ContractNotAcceptButton.AutoSize = true;
+            this.ContractNotAcceptButton.Location = new System.Drawing.Point(20, 11);
+            this.ContractNotAcceptButton.Name = "ContractNotAcceptButton";
+            this.ContractNotAcceptButton.Size = new System.Drawing.Size(168, 21);
+            this.ContractNotAcceptButton.TabIndex = 24;
+            this.ContractNotAcceptButton.TabStop = true;
+            this.ContractNotAcceptButton.Text = "Договор не подписан";
+            this.ContractNotAcceptButton.UseVisualStyleBackColor = true;
+            this.ContractNotAcceptButton.CheckedChanged += new System.EventHandler(this.ContractNotAcceptButton_CheckedChanged);
             // 
-            // MCNumberTextBox
+            // ContractAcceptButton
             // 
-            this.MCNumberTextBox.Location = new System.Drawing.Point(506, 181);
-            this.MCNumberTextBox.Mask = "00000000";
-            this.MCNumberTextBox.Name = "MCNumberTextBox";
-            this.MCNumberTextBox.Size = new System.Drawing.Size(165, 23);
-            this.MCNumberTextBox.TabIndex = 22;
+            this.ContractAcceptButton.AutoSize = true;
+            this.ContractAcceptButton.Location = new System.Drawing.Point(194, 11);
+            this.ContractAcceptButton.Name = "ContractAcceptButton";
+            this.ContractAcceptButton.Size = new System.Drawing.Size(148, 21);
+            this.ContractAcceptButton.TabIndex = 24;
+            this.ContractAcceptButton.TabStop = true;
+            this.ContractAcceptButton.Text = "Договор подписан";
+            this.ContractAcceptButton.UseVisualStyleBackColor = true;
+            this.ContractAcceptButton.CheckedChanged += new System.EventHandler(this.ContractAcceptButton_CheckedChanged_1);
+            // 
+            // AddButton
+            // 
+            this.AddButton.Location = new System.Drawing.Point(427, 255);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(303, 27);
+            this.AddButton.TabIndex = 23;
+            this.AddButton.Text = "Завести личное дело";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // ChangeSDButton
             // 
@@ -742,49 +785,6 @@ namespace StaffDepartment
             this.label20.TabIndex = 15;
             this.label20.Text = "Рабочий отдел";
             // 
-            // ContractAcceptButton
-            // 
-            this.ContractAcceptButton.AutoSize = true;
-            this.ContractAcceptButton.Location = new System.Drawing.Point(194, 11);
-            this.ContractAcceptButton.Name = "ContractAcceptButton";
-            this.ContractAcceptButton.Size = new System.Drawing.Size(148, 21);
-            this.ContractAcceptButton.TabIndex = 24;
-            this.ContractAcceptButton.TabStop = true;
-            this.ContractAcceptButton.Text = "Договор подписан";
-            this.ContractAcceptButton.UseVisualStyleBackColor = true;
-            this.ContractAcceptButton.CheckedChanged += new System.EventHandler(this.ContractAcceptButton_CheckedChanged_1);
-            // 
-            // ContractNotAcceptButton
-            // 
-            this.ContractNotAcceptButton.AutoSize = true;
-            this.ContractNotAcceptButton.Location = new System.Drawing.Point(20, 11);
-            this.ContractNotAcceptButton.Name = "ContractNotAcceptButton";
-            this.ContractNotAcceptButton.Size = new System.Drawing.Size(168, 21);
-            this.ContractNotAcceptButton.TabIndex = 24;
-            this.ContractNotAcceptButton.TabStop = true;
-            this.ContractNotAcceptButton.Text = "Договор не подписан";
-            this.ContractNotAcceptButton.UseVisualStyleBackColor = true;
-            this.ContractNotAcceptButton.CheckedChanged += new System.EventHandler(this.ContractNotAcceptButton_CheckedChanged);
-            // 
-            // PersonellNumberTextBox
-            // 
-            this.PersonellNumberTextBox.Location = new System.Drawing.Point(150, 43);
-            this.PersonellNumberTextBox.Mask = "ТН-000000";
-            this.PersonellNumberTextBox.Name = "PersonellNumberTextBox";
-            this.PersonellNumberTextBox.ReadOnly = true;
-            this.PersonellNumberTextBox.Size = new System.Drawing.Size(237, 23);
-            this.PersonellNumberTextBox.TabIndex = 25;
-            // 
-            // AddButton
-            // 
-            this.AddButton.Location = new System.Drawing.Point(427, 255);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(303, 27);
-            this.AddButton.TabIndex = 23;
-            this.AddButton.Text = "Завести личное дело";
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
             // AddPersonalFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -792,7 +792,9 @@ namespace StaffDepartment
             this.ClientSize = new System.Drawing.Size(746, 320);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "AddPersonalFile";
             this.Text = "Добавление личного дела";
             this.Load += new System.EventHandler(this.AddPersonalFile_Load);

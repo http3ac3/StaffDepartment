@@ -39,6 +39,7 @@ namespace StaffDepartment
             // 
             this.JPersonalFileDGV.AllowUserToAddRows = false;
             this.JPersonalFileDGV.AllowUserToDeleteRows = false;
+            this.JPersonalFileDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.JPersonalFileDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.JPersonalFileDGV.Location = new System.Drawing.Point(12, 38);
             this.JPersonalFileDGV.Name = "JPersonalFileDGV";
@@ -70,12 +71,14 @@ namespace StaffDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 408);
+            this.ClientSize = new System.Drawing.Size(809, 408);
             this.Controls.Add(this.ClearJournalLink);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.JPersonalFileDGV);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimizeBox = false;
             this.Name = "PersonalFileJournal";
             this.Text = "Журнал изменений";
             this.Load += new System.EventHandler(this.PersonalFileJournal_Load);
