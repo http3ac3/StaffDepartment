@@ -329,5 +329,8 @@ namespace StaffDepartment
             new AddDiplomaForm(connection, this, true,
                 DiplomaDataGrid.Rows[e.RowIndex].Cells[2].Value.ToString(),
                 DiplomaDataGrid.Rows[e.RowIndex].Cells[3].Value.ToString()).Show();
+
+        private void RegisterUserButton_Click(object sender, EventArgs e) =>
+            new RegistrationForm().Show();
     }
 }

@@ -579,6 +579,7 @@ namespace StaffDepartment
             this.RegisterUserButton.Name = "RegisterUserButton";
             this.RegisterUserButton.Size = new System.Drawing.Size(278, 24);
             this.RegisterUserButton.Text = "Регистрация пользователя";
+            this.RegisterUserButton.Click += new System.EventHandler(this.RegisterUserButton_Click);
             // 
             // PersonalFileJournalButton
             // 
