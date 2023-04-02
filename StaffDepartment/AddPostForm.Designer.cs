@@ -29,6 +29,7 @@ namespace StaffDepartment
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPostForm));
             this.label1 = new System.Windows.Forms.Label();
             this.PostNameTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +46,7 @@ namespace StaffDepartment
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 17);
+            this.label1.Size = new System.Drawing.Size(189, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Название должности";
             // 
@@ -53,7 +54,7 @@ namespace StaffDepartment
             // 
             this.PostNameTB.Location = new System.Drawing.Point(192, 10);
             this.PostNameTB.Name = "PostNameTB";
-            this.PostNameTB.Size = new System.Drawing.Size(244, 23);
+            this.PostNameTB.Size = new System.Drawing.Size(244, 27);
             this.PostNameTB.TabIndex = 1;
             // 
             // label2
@@ -61,7 +62,7 @@ namespace StaffDepartment
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(166, 17);
+            this.label2.Size = new System.Drawing.Size(206, 22);
             this.label2.TabIndex = 0;
             this.label2.Text = "Заработная плата, руб.";
             // 
@@ -70,7 +71,7 @@ namespace StaffDepartment
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 17);
+            this.label3.Size = new System.Drawing.Size(119, 22);
             this.label3.TabIndex = 0;
             this.label3.Text = "Надбавка, %";
             // 
@@ -84,14 +85,14 @@ namespace StaffDepartment
             0,
             0});
             this.SalaryTB.Name = "SalaryTB";
-            this.SalaryTB.Size = new System.Drawing.Size(144, 23);
+            this.SalaryTB.Size = new System.Drawing.Size(144, 27);
             this.SalaryTB.TabIndex = 2;
             // 
             // RiseTB
             // 
             this.RiseTB.Location = new System.Drawing.Point(192, 69);
             this.RiseTB.Name = "RiseTB";
-            this.RiseTB.Size = new System.Drawing.Size(144, 23);
+            this.RiseTB.Size = new System.Drawing.Size(144, 27);
             this.RiseTB.TabIndex = 2;
             this.RiseTB.Value = new decimal(new int[] {
             5,
@@ -111,7 +112,7 @@ namespace StaffDepartment
             // 
             // AddPostForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 138);
             this.Controls.Add(this.AddPostButton);
@@ -123,6 +124,7 @@ namespace StaffDepartment
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "AddPostForm";

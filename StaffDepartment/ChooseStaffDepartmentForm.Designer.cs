@@ -29,6 +29,7 @@ namespace StaffDepartment
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChooseStaffDepartmentForm));
             this.label1 = new System.Windows.Forms.Label();
             this.StaffDepartmentDGV = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.StaffDepartmentDGV)).BeginInit();
@@ -39,7 +40,7 @@ namespace StaffDepartment
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 17);
+            this.label1.Size = new System.Drawing.Size(217, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Выберите отдел кадров ";
             // 
@@ -48,19 +49,21 @@ namespace StaffDepartment
             this.StaffDepartmentDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.StaffDepartmentDGV.Location = new System.Drawing.Point(12, 33);
             this.StaffDepartmentDGV.Name = "StaffDepartmentDGV";
+            this.StaffDepartmentDGV.RowHeadersWidth = 51;
             this.StaffDepartmentDGV.Size = new System.Drawing.Size(762, 472);
             this.StaffDepartmentDGV.TabIndex = 1;
             this.StaffDepartmentDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.StaffDepartmentDGV_CellDoubleClick);
             // 
             // ChooseStaffDepartmentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 517);
             this.Controls.Add(this.StaffDepartmentDGV);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "ChooseStaffDepartmentForm";

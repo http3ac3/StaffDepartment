@@ -29,6 +29,7 @@ namespace StaffDepartment
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonalFileJournal));
             this.JPersonalFileDGV = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.ClearJournalLink = new System.Windows.Forms.LinkLabel();
@@ -43,6 +44,7 @@ namespace StaffDepartment
             this.JPersonalFileDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.JPersonalFileDGV.Location = new System.Drawing.Point(12, 38);
             this.JPersonalFileDGV.Name = "JPersonalFileDGV";
+            this.JPersonalFileDGV.RowHeadersWidth = 51;
             this.JPersonalFileDGV.Size = new System.Drawing.Size(786, 358);
             this.JPersonalFileDGV.TabIndex = 0;
             // 
@@ -51,7 +53,7 @@ namespace StaffDepartment
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(268, 17);
+            this.label1.Size = new System.Drawing.Size(343, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "Журнал изменений данных личных дел";
             // 
@@ -61,7 +63,7 @@ namespace StaffDepartment
             this.ClearJournalLink.LinkColor = System.Drawing.Color.Black;
             this.ClearJournalLink.Location = new System.Drawing.Point(675, 9);
             this.ClearJournalLink.Name = "ClearJournalLink";
-            this.ClearJournalLink.Size = new System.Drawing.Size(123, 17);
+            this.ClearJournalLink.Size = new System.Drawing.Size(156, 22);
             this.ClearJournalLink.TabIndex = 2;
             this.ClearJournalLink.TabStop = true;
             this.ClearJournalLink.Text = "Очистить журнал";
@@ -69,7 +71,7 @@ namespace StaffDepartment
             // 
             // PersonalFileJournal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 408);
             this.Controls.Add(this.ClearJournalLink);
@@ -77,6 +79,7 @@ namespace StaffDepartment
             this.Controls.Add(this.JPersonalFileDGV);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimizeBox = false;
             this.Name = "PersonalFileJournal";

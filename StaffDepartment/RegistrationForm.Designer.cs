@@ -29,6 +29,7 @@ namespace StaffDepartment
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationForm));
             this.label1 = new System.Windows.Forms.Label();
             this.LoginNameTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +47,7 @@ namespace StaffDepartment
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 17);
+            this.label1.Size = new System.Drawing.Size(137, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Имя для входа";
             // 
@@ -54,7 +55,7 @@ namespace StaffDepartment
             // 
             this.LoginNameTB.Location = new System.Drawing.Point(148, 13);
             this.LoginNameTB.Name = "LoginNameTB";
-            this.LoginNameTB.Size = new System.Drawing.Size(224, 23);
+            this.LoginNameTB.Size = new System.Drawing.Size(224, 27);
             this.LoginNameTB.TabIndex = 1;
             // 
             // label2
@@ -62,7 +63,7 @@ namespace StaffDepartment
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 17);
+            this.label2.Size = new System.Drawing.Size(72, 22);
             this.label2.TabIndex = 0;
             this.label2.Text = "Пароль";
             // 
@@ -71,7 +72,7 @@ namespace StaffDepartment
             this.PasswordTB.Location = new System.Drawing.Point(148, 45);
             this.PasswordTB.Name = "PasswordTB";
             this.PasswordTB.PasswordChar = '*';
-            this.PasswordTB.Size = new System.Drawing.Size(224, 23);
+            this.PasswordTB.Size = new System.Drawing.Size(224, 27);
             this.PasswordTB.TabIndex = 1;
             // 
             // label3
@@ -79,7 +80,7 @@ namespace StaffDepartment
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 80);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 17);
+            this.label3.Size = new System.Drawing.Size(163, 22);
             this.label3.TabIndex = 0;
             this.label3.Text = "Повторите пароль";
             // 
@@ -88,7 +89,7 @@ namespace StaffDepartment
             this.ConfirmPassword.Location = new System.Drawing.Point(148, 77);
             this.ConfirmPassword.Name = "ConfirmPassword";
             this.ConfirmPassword.PasswordChar = '*';
-            this.ConfirmPassword.Size = new System.Drawing.Size(224, 23);
+            this.ConfirmPassword.Size = new System.Drawing.Size(224, 27);
             this.ConfirmPassword.TabIndex = 1;
             // 
             // DirectorRadioButton
@@ -96,7 +97,7 @@ namespace StaffDepartment
             this.DirectorRadioButton.AutoSize = true;
             this.DirectorRadioButton.Location = new System.Drawing.Point(16, 147);
             this.DirectorRadioButton.Name = "DirectorRadioButton";
-            this.DirectorRadioButton.Size = new System.Drawing.Size(245, 21);
+            this.DirectorRadioButton.Size = new System.Drawing.Size(310, 26);
             this.DirectorRadioButton.TabIndex = 2;
             this.DirectorRadioButton.TabStop = true;
             this.DirectorRadioButton.Text = "Директор (полные возможности)";
@@ -107,7 +108,7 @@ namespace StaffDepartment
             this.VisitorRadioButton.AutoSize = true;
             this.VisitorRadioButton.Location = new System.Drawing.Point(16, 174);
             this.VisitorRadioButton.Name = "VisitorRadioButton";
-            this.VisitorRadioButton.Size = new System.Drawing.Size(282, 21);
+            this.VisitorRadioButton.Size = new System.Drawing.Size(354, 26);
             this.VisitorRadioButton.TabIndex = 2;
             this.VisitorRadioButton.TabStop = true;
             this.VisitorRadioButton.Text = "Посетитель (только просмотр данных)";
@@ -118,7 +119,7 @@ namespace StaffDepartment
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 123);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(212, 17);
+            this.label4.Size = new System.Drawing.Size(267, 22);
             this.label4.TabIndex = 0;
             this.label4.Text = "Назначьте роль пользователю";
             // 
@@ -134,7 +135,7 @@ namespace StaffDepartment
             // 
             // RegistrationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 257);
             this.Controls.Add(this.RegisterButton);
@@ -148,6 +149,7 @@ namespace StaffDepartment
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegistrationForm";
             this.Text = "Регистрация нового пользователя";

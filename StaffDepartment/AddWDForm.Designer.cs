@@ -29,6 +29,7 @@ namespace StaffDepartment
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddWDForm));
             this.label1 = new System.Windows.Forms.Label();
             this.WDNameTB = new System.Windows.Forms.TextBox();
             this.AddButton = new System.Windows.Forms.Button();
@@ -39,7 +40,7 @@ namespace StaffDepartment
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 17);
+            this.label1.Size = new System.Drawing.Size(92, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Название";
             // 
@@ -47,7 +48,7 @@ namespace StaffDepartment
             // 
             this.WDNameTB.Location = new System.Drawing.Point(91, 10);
             this.WDNameTB.Name = "WDNameTB";
-            this.WDNameTB.Size = new System.Drawing.Size(350, 23);
+            this.WDNameTB.Size = new System.Drawing.Size(350, 27);
             this.WDNameTB.TabIndex = 1;
             // 
             // AddButton
@@ -62,7 +63,7 @@ namespace StaffDepartment
             // 
             // AddWDForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(453, 75);
             this.Controls.Add(this.AddButton);
@@ -70,6 +71,7 @@ namespace StaffDepartment
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "AddWDForm";

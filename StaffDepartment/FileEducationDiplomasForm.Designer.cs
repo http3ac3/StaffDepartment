@@ -29,6 +29,7 @@ namespace StaffDepartment
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileEducationDiplomasForm));
             this.EducationDiplomaDataGrid = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.EducationDiplomaDataGrid)).BeginInit();
             this.SuspendLayout();
@@ -41,17 +42,19 @@ namespace StaffDepartment
             this.EducationDiplomaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EducationDiplomaDataGrid.Location = new System.Drawing.Point(12, 12);
             this.EducationDiplomaDataGrid.Name = "EducationDiplomaDataGrid";
+            this.EducationDiplomaDataGrid.RowHeadersWidth = 51;
             this.EducationDiplomaDataGrid.Size = new System.Drawing.Size(847, 217);
             this.EducationDiplomaDataGrid.TabIndex = 0;
             // 
             // FileEducationDiplomasForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 243);
             this.Controls.Add(this.EducationDiplomaDataGrid);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FileEducationDiplomasForm";

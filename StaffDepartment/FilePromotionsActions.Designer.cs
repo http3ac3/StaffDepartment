@@ -29,6 +29,7 @@ namespace StaffDepartment
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FilePromotionsActions));
             this.label1 = new System.Windows.Forms.Label();
             this.ActionsDGV = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.ActionsDGV)).BeginInit();
@@ -40,7 +41,7 @@ namespace StaffDepartment
             this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 17);
+            this.label1.Size = new System.Drawing.Size(0, 22);
             this.label1.TabIndex = 0;
             // 
             // ActionsDGV
@@ -51,18 +52,20 @@ namespace StaffDepartment
             this.ActionsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ActionsDGV.Location = new System.Drawing.Point(12, 12);
             this.ActionsDGV.Name = "ActionsDGV";
+            this.ActionsDGV.RowHeadersWidth = 51;
             this.ActionsDGV.Size = new System.Drawing.Size(627, 417);
             this.ActionsDGV.TabIndex = 1;
             // 
             // FilePromotionsActions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(650, 437);
             this.Controls.Add(this.ActionsDGV);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FilePromotionsActions";

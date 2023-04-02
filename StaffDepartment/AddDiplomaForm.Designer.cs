@@ -29,6 +29,7 @@ namespace StaffDepartment
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddDiplomaForm));
             this.label1 = new System.Windows.Forms.Label();
             this.EduOrganizationNameTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,7 +59,7 @@ namespace StaffDepartment
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 17);
+            this.label1.Size = new System.Drawing.Size(278, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Название учебной организации";
             // 
@@ -66,7 +67,7 @@ namespace StaffDepartment
             // 
             this.EduOrganizationNameTB.Location = new System.Drawing.Point(238, 10);
             this.EduOrganizationNameTB.Name = "EduOrganizationNameTB";
-            this.EduOrganizationNameTB.Size = new System.Drawing.Size(292, 23);
+            this.EduOrganizationNameTB.Size = new System.Drawing.Size(292, 27);
             this.EduOrganizationNameTB.TabIndex = 1;
             // 
             // label2
@@ -74,7 +75,7 @@ namespace StaffDepartment
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 17);
+            this.label2.Size = new System.Drawing.Size(195, 22);
             this.label2.TabIndex = 0;
             this.label2.Text = "Уровень образования";
             // 
@@ -89,7 +90,7 @@ namespace StaffDepartment
             "высшее образование"});
             this.EduLevelCB.Location = new System.Drawing.Point(175, 41);
             this.EduLevelCB.Name = "EduLevelCB";
-            this.EduLevelCB.Size = new System.Drawing.Size(355, 25);
+            this.EduLevelCB.Size = new System.Drawing.Size(355, 28);
             this.EduLevelCB.TabIndex = 2;
             // 
             // label3
@@ -97,7 +98,7 @@ namespace StaffDepartment
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 75);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 17);
+            this.label3.Size = new System.Drawing.Size(194, 22);
             this.label3.TabIndex = 0;
             this.label3.Text = "Степень образования";
             // 
@@ -113,7 +114,7 @@ namespace StaffDepartment
             "не указано"});
             this.EduDegreeCB.Location = new System.Drawing.Point(175, 72);
             this.EduDegreeCB.Name = "EduDegreeCB";
-            this.EduDegreeCB.Size = new System.Drawing.Size(355, 25);
+            this.EduDegreeCB.Size = new System.Drawing.Size(355, 28);
             this.EduDegreeCB.TabIndex = 2;
             // 
             // label4
@@ -121,7 +122,7 @@ namespace StaffDepartment
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(10, 135);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 17);
+            this.label4.Size = new System.Drawing.Size(142, 22);
             this.label4.TabIndex = 3;
             this.label4.Text = "Серия диплома";
             // 
@@ -130,7 +131,7 @@ namespace StaffDepartment
             this.DiplomaSeriesTB.Location = new System.Drawing.Point(126, 132);
             this.DiplomaSeriesTB.Mask = "000000";
             this.DiplomaSeriesTB.Name = "DiplomaSeriesTB";
-            this.DiplomaSeriesTB.Size = new System.Drawing.Size(125, 23);
+            this.DiplomaSeriesTB.Size = new System.Drawing.Size(125, 27);
             this.DiplomaSeriesTB.TabIndex = 4;
             // 
             // label6
@@ -138,7 +139,7 @@ namespace StaffDepartment
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(273, 135);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 17);
+            this.label6.Size = new System.Drawing.Size(145, 22);
             this.label6.TabIndex = 3;
             this.label6.Text = "Номер диплома";
             // 
@@ -147,7 +148,7 @@ namespace StaffDepartment
             this.DiplomaNumberTB.Location = new System.Drawing.Point(389, 132);
             this.DiplomaNumberTB.Mask = "0000000";
             this.DiplomaNumberTB.Name = "DiplomaNumberTB";
-            this.DiplomaNumberTB.Size = new System.Drawing.Size(141, 23);
+            this.DiplomaNumberTB.Size = new System.Drawing.Size(141, 27);
             this.DiplomaNumberTB.TabIndex = 4;
             // 
             // label5
@@ -155,7 +156,7 @@ namespace StaffDepartment
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(10, 164);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 17);
+            this.label5.Size = new System.Drawing.Size(121, 22);
             this.label5.TabIndex = 3;
             this.label5.Text = "Дата выдачи";
             // 
@@ -164,7 +165,7 @@ namespace StaffDepartment
             this.IssueDateTB.Location = new System.Drawing.Point(126, 161);
             this.IssueDateTB.Mask = "00-00-0000";
             this.IssueDateTB.Name = "IssueDateTB";
-            this.IssueDateTB.Size = new System.Drawing.Size(125, 23);
+            this.IssueDateTB.Size = new System.Drawing.Size(125, 27);
             this.IssueDateTB.TabIndex = 4;
             // 
             // label7
@@ -172,7 +173,7 @@ namespace StaffDepartment
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(11, 106);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(192, 17);
+            this.label7.Size = new System.Drawing.Size(242, 22);
             this.label7.TabIndex = 0;
             this.label7.Text = "Полученная специальность";
             // 
@@ -180,7 +181,7 @@ namespace StaffDepartment
             // 
             this.SpecialityTB.Location = new System.Drawing.Point(238, 103);
             this.SpecialityTB.Name = "SpecialityTB";
-            this.SpecialityTB.Size = new System.Drawing.Size(292, 23);
+            this.SpecialityTB.Size = new System.Drawing.Size(292, 27);
             this.SpecialityTB.TabIndex = 1;
             // 
             // SetPersonalFileButton
@@ -189,7 +190,7 @@ namespace StaffDepartment
             this.SetPersonalFileButton.LinkColor = System.Drawing.Color.Black;
             this.SetPersonalFileButton.Location = new System.Drawing.Point(316, 201);
             this.SetPersonalFileButton.Name = "SetPersonalFileButton";
-            this.SetPersonalFileButton.Size = new System.Drawing.Size(214, 17);
+            this.SetPersonalFileButton.Size = new System.Drawing.Size(274, 22);
             this.SetPersonalFileButton.TabIndex = 5;
             this.SetPersonalFileButton.TabStop = true;
             this.SetPersonalFileButton.Text = "Назначить владельца диплома";
@@ -200,7 +201,7 @@ namespace StaffDepartment
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(10, 234);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(177, 17);
+            this.label8.Size = new System.Drawing.Size(227, 22);
             this.label8.TabIndex = 0;
             this.label8.Text = "ФИО владельца диплома";
             // 
@@ -209,7 +210,7 @@ namespace StaffDepartment
             this.FioTB.Location = new System.Drawing.Point(193, 231);
             this.FioTB.Name = "FioTB";
             this.FioTB.ReadOnly = true;
-            this.FioTB.Size = new System.Drawing.Size(337, 23);
+            this.FioTB.Size = new System.Drawing.Size(337, 27);
             this.FioTB.TabIndex = 1;
             // 
             // label9
@@ -217,7 +218,7 @@ namespace StaffDepartment
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(10, 263);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(154, 17);
+            this.label9.Size = new System.Drawing.Size(197, 22);
             this.label9.TabIndex = 0;
             this.label9.Text = "Серия трудовой книги";
             // 
@@ -226,7 +227,7 @@ namespace StaffDepartment
             this.WBSeriesTB.Location = new System.Drawing.Point(193, 260);
             this.WBSeriesTB.Name = "WBSeriesTB";
             this.WBSeriesTB.ReadOnly = true;
-            this.WBSeriesTB.Size = new System.Drawing.Size(129, 23);
+            this.WBSeriesTB.Size = new System.Drawing.Size(129, 27);
             this.WBSeriesTB.TabIndex = 1;
             // 
             // label10
@@ -234,7 +235,7 @@ namespace StaffDepartment
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(10, 292);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(156, 17);
+            this.label10.Size = new System.Drawing.Size(200, 22);
             this.label10.TabIndex = 0;
             this.label10.Text = "Номер трудовой книги";
             // 
@@ -243,7 +244,7 @@ namespace StaffDepartment
             this.WBNumberTB.Location = new System.Drawing.Point(193, 289);
             this.WBNumberTB.Name = "WBNumberTB";
             this.WBNumberTB.ReadOnly = true;
-            this.WBNumberTB.Size = new System.Drawing.Size(129, 23);
+            this.WBNumberTB.Size = new System.Drawing.Size(129, 27);
             this.WBNumberTB.TabIndex = 1;
             // 
             // AddDiplomaButton
@@ -258,7 +259,7 @@ namespace StaffDepartment
             // 
             // AddDiplomaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 325);
             this.Controls.Add(this.AddDiplomaButton);
@@ -285,6 +286,7 @@ namespace StaffDepartment
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "AddDiplomaForm";

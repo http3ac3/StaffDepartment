@@ -29,6 +29,7 @@ namespace StaffDepartment
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStaffDepartmentForm));
             this.label1 = new System.Windows.Forms.Label();
             this.CountryTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,7 +56,7 @@ namespace StaffDepartment
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(11, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.Size = new System.Drawing.Size(71, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Страна";
             // 
@@ -63,7 +64,7 @@ namespace StaffDepartment
             // 
             this.CountryTB.Location = new System.Drawing.Point(92, 12);
             this.CountryTB.Name = "CountryTB";
-            this.CountryTB.Size = new System.Drawing.Size(226, 23);
+            this.CountryTB.Size = new System.Drawing.Size(226, 27);
             this.CountryTB.TabIndex = 1;
             // 
             // label2
@@ -71,7 +72,7 @@ namespace StaffDepartment
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(11, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 17);
+            this.label2.Size = new System.Drawing.Size(69, 22);
             this.label2.TabIndex = 0;
             this.label2.Text = "Регион";
             // 
@@ -79,7 +80,7 @@ namespace StaffDepartment
             // 
             this.RegionTB.Location = new System.Drawing.Point(92, 42);
             this.RegionTB.Name = "RegionTB";
-            this.RegionTB.Size = new System.Drawing.Size(226, 23);
+            this.RegionTB.Size = new System.Drawing.Size(226, 27);
             this.RegionTB.TabIndex = 1;
             // 
             // label3
@@ -87,7 +88,7 @@ namespace StaffDepartment
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(11, 77);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 17);
+            this.label3.Size = new System.Drawing.Size(98, 22);
             this.label3.TabIndex = 0;
             this.label3.Text = "Нас. пункт";
             // 
@@ -95,7 +96,7 @@ namespace StaffDepartment
             // 
             this.LocalityTB.Location = new System.Drawing.Point(92, 74);
             this.LocalityTB.Name = "LocalityTB";
-            this.LocalityTB.Size = new System.Drawing.Size(226, 23);
+            this.LocalityTB.Size = new System.Drawing.Size(226, 27);
             this.LocalityTB.TabIndex = 1;
             // 
             // label4
@@ -103,7 +104,7 @@ namespace StaffDepartment
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(11, 106);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 17);
+            this.label4.Size = new System.Drawing.Size(63, 22);
             this.label4.TabIndex = 0;
             this.label4.Text = "Улица";
             // 
@@ -111,7 +112,7 @@ namespace StaffDepartment
             // 
             this.StreetTB.Location = new System.Drawing.Point(92, 103);
             this.StreetTB.Name = "StreetTB";
-            this.StreetTB.Size = new System.Drawing.Size(226, 23);
+            this.StreetTB.Size = new System.Drawing.Size(226, 27);
             this.StreetTB.TabIndex = 1;
             // 
             // label5
@@ -119,7 +120,7 @@ namespace StaffDepartment
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(11, 135);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 17);
+            this.label5.Size = new System.Drawing.Size(138, 22);
             this.label5.TabIndex = 0;
             this.label5.Text = "Номер корпуса";
             // 
@@ -127,7 +128,7 @@ namespace StaffDepartment
             // 
             this.HousingNumberTB.Location = new System.Drawing.Point(125, 132);
             this.HousingNumberTB.Name = "HousingNumberTB";
-            this.HousingNumberTB.Size = new System.Drawing.Size(193, 23);
+            this.HousingNumberTB.Size = new System.Drawing.Size(193, 27);
             this.HousingNumberTB.TabIndex = 1;
             // 
             // label6
@@ -135,7 +136,7 @@ namespace StaffDepartment
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(11, 164);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 17);
+            this.label6.Size = new System.Drawing.Size(115, 22);
             this.label6.TabIndex = 0;
             this.label6.Text = "Номер дома";
             // 
@@ -143,7 +144,7 @@ namespace StaffDepartment
             // 
             this.HomeNumberTB.Location = new System.Drawing.Point(125, 161);
             this.HomeNumberTB.Name = "HomeNumberTB";
-            this.HomeNumberTB.Size = new System.Drawing.Size(193, 23);
+            this.HomeNumberTB.Size = new System.Drawing.Size(193, 27);
             this.HomeNumberTB.TabIndex = 1;
             // 
             // label7
@@ -151,7 +152,7 @@ namespace StaffDepartment
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(11, 193);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(131, 17);
+            this.label7.Size = new System.Drawing.Size(169, 22);
             this.label7.TabIndex = 0;
             this.label7.Text = "Номер помещения";
             // 
@@ -159,7 +160,7 @@ namespace StaffDepartment
             // 
             this.ApartmentNumberTB.Location = new System.Drawing.Point(146, 190);
             this.ApartmentNumberTB.Name = "ApartmentNumberTB";
-            this.ApartmentNumberTB.Size = new System.Drawing.Size(172, 23);
+            this.ApartmentNumberTB.Size = new System.Drawing.Size(172, 27);
             this.ApartmentNumberTB.TabIndex = 1;
             // 
             // label8
@@ -167,7 +168,7 @@ namespace StaffDepartment
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(10, 222);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(121, 17);
+            this.label8.Size = new System.Drawing.Size(153, 22);
             this.label8.TabIndex = 0;
             this.label8.Text = "Номер телефона";
             // 
@@ -176,7 +177,7 @@ namespace StaffDepartment
             this.PhoneNumberTB.Location = new System.Drawing.Point(146, 222);
             this.PhoneNumberTB.Mask = "+7(000)000-00-00";
             this.PhoneNumberTB.Name = "PhoneNumberTB";
-            this.PhoneNumberTB.Size = new System.Drawing.Size(171, 23);
+            this.PhoneNumberTB.Size = new System.Drawing.Size(171, 27);
             this.PhoneNumberTB.TabIndex = 3;
             // 
             // label9
@@ -184,7 +185,7 @@ namespace StaffDepartment
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(9, 254);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 17);
+            this.label9.Size = new System.Drawing.Size(72, 22);
             this.label9.TabIndex = 0;
             this.label9.Text = "Индекс";
             // 
@@ -193,7 +194,7 @@ namespace StaffDepartment
             this.IndexTB.Location = new System.Drawing.Point(146, 251);
             this.IndexTB.Mask = "000000";
             this.IndexTB.Name = "IndexTB";
-            this.IndexTB.Size = new System.Drawing.Size(171, 23);
+            this.IndexTB.Size = new System.Drawing.Size(171, 27);
             this.IndexTB.TabIndex = 3;
             // 
             // AddButton
@@ -208,7 +209,7 @@ namespace StaffDepartment
             // 
             // AddStaffDepartmentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(330, 322);
             this.Controls.Add(this.AddButton);
@@ -232,6 +233,7 @@ namespace StaffDepartment
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "AddStaffDepartmentForm";

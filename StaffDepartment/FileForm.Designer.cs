@@ -71,6 +71,7 @@ namespace StaffDepartment
             this.label20 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ViewEducationDiplomaButton = new System.Windows.Forms.Button();
             this.WBSeriesCB = new System.Windows.Forms.ComboBox();
             this.PatronymicTextBox = new System.Windows.Forms.TextBox();
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
@@ -98,7 +99,6 @@ namespace StaffDepartment
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ContractStatusCB = new System.Windows.Forms.ComboBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.ViewEducationDiplomaButton = new System.Windows.Forms.Button();
             this.UpdateInfoButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -114,7 +114,7 @@ namespace StaffDepartment
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(8, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.Size = new System.Drawing.Size(88, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Фамилия";
             // 
@@ -123,7 +123,7 @@ namespace StaffDepartment
             this.LastNameTextBox.Location = new System.Drawing.Point(84, 12);
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.ReadOnly = true;
-            this.LastNameTextBox.Size = new System.Drawing.Size(219, 23);
+            this.LastNameTextBox.Size = new System.Drawing.Size(219, 27);
             this.LastNameTextBox.TabIndex = 1;
             // 
             // label2
@@ -131,7 +131,7 @@ namespace StaffDepartment
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(384, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
+            this.label2.Size = new System.Drawing.Size(142, 22);
             this.label2.TabIndex = 0;
             this.label2.Text = "Дата рождения";
             // 
@@ -140,7 +140,7 @@ namespace StaffDepartment
             this.CountryTextBox.Location = new System.Drawing.Point(90, 26);
             this.CountryTextBox.Name = "CountryTextBox";
             this.CountryTextBox.ReadOnly = true;
-            this.CountryTextBox.Size = new System.Drawing.Size(202, 23);
+            this.CountryTextBox.Size = new System.Drawing.Size(202, 27);
             this.CountryTextBox.TabIndex = 1;
             // 
             // groupBox1
@@ -169,7 +169,7 @@ namespace StaffDepartment
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(190, 147);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 17);
+            this.label7.Size = new System.Drawing.Size(57, 22);
             this.label7.TabIndex = 0;
             this.label7.Text = "№ кв.";
             // 
@@ -178,7 +178,7 @@ namespace StaffDepartment
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 147);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 17);
+            this.label6.Size = new System.Drawing.Size(77, 22);
             this.label6.TabIndex = 0;
             this.label6.Text = "№ дома";
             // 
@@ -187,7 +187,7 @@ namespace StaffDepartment
             this.label27.AutoSize = true;
             this.label27.Location = new System.Drawing.Point(6, 118);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(49, 17);
+            this.label27.Size = new System.Drawing.Size(63, 22);
             this.label27.TabIndex = 0;
             this.label27.Text = "Улица";
             // 
@@ -196,7 +196,7 @@ namespace StaffDepartment
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 17);
+            this.label5.Size = new System.Drawing.Size(98, 22);
             this.label5.TabIndex = 0;
             this.label5.Text = "Нас. пункт";
             // 
@@ -205,7 +205,7 @@ namespace StaffDepartment
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 58);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 17);
+            this.label4.Size = new System.Drawing.Size(80, 22);
             this.label4.TabIndex = 0;
             this.label4.Text = "Область";
             // 
@@ -214,7 +214,7 @@ namespace StaffDepartment
             this.ApartmentNumberTextBox.Location = new System.Drawing.Point(240, 144);
             this.ApartmentNumberTextBox.Name = "ApartmentNumberTextBox";
             this.ApartmentNumberTextBox.ReadOnly = true;
-            this.ApartmentNumberTextBox.Size = new System.Drawing.Size(52, 23);
+            this.ApartmentNumberTextBox.Size = new System.Drawing.Size(52, 27);
             this.ApartmentNumberTextBox.TabIndex = 1;
             // 
             // label3
@@ -222,7 +222,7 @@ namespace StaffDepartment
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
+            this.label3.Size = new System.Drawing.Size(71, 22);
             this.label3.TabIndex = 0;
             this.label3.Text = "Страна";
             // 
@@ -231,7 +231,7 @@ namespace StaffDepartment
             this.HomeNumberTextBox.Location = new System.Drawing.Point(90, 144);
             this.HomeNumberTextBox.Name = "HomeNumberTextBox";
             this.HomeNumberTextBox.ReadOnly = true;
-            this.HomeNumberTextBox.Size = new System.Drawing.Size(59, 23);
+            this.HomeNumberTextBox.Size = new System.Drawing.Size(59, 27);
             this.HomeNumberTextBox.TabIndex = 1;
             // 
             // StreetTextBox
@@ -239,7 +239,7 @@ namespace StaffDepartment
             this.StreetTextBox.Location = new System.Drawing.Point(90, 115);
             this.StreetTextBox.Name = "StreetTextBox";
             this.StreetTextBox.ReadOnly = true;
-            this.StreetTextBox.Size = new System.Drawing.Size(202, 23);
+            this.StreetTextBox.Size = new System.Drawing.Size(202, 27);
             this.StreetTextBox.TabIndex = 1;
             // 
             // LocalityTextBox
@@ -247,7 +247,7 @@ namespace StaffDepartment
             this.LocalityTextBox.Location = new System.Drawing.Point(90, 86);
             this.LocalityTextBox.Name = "LocalityTextBox";
             this.LocalityTextBox.ReadOnly = true;
-            this.LocalityTextBox.Size = new System.Drawing.Size(202, 23);
+            this.LocalityTextBox.Size = new System.Drawing.Size(202, 27);
             this.LocalityTextBox.TabIndex = 1;
             // 
             // RegionTextBox
@@ -255,7 +255,7 @@ namespace StaffDepartment
             this.RegionTextBox.Location = new System.Drawing.Point(90, 55);
             this.RegionTextBox.Name = "RegionTextBox";
             this.RegionTextBox.ReadOnly = true;
-            this.RegionTextBox.Size = new System.Drawing.Size(202, 23);
+            this.RegionTextBox.Size = new System.Drawing.Size(202, 27);
             this.RegionTextBox.TabIndex = 1;
             // 
             // BirthdayDateTextBox
@@ -263,7 +263,7 @@ namespace StaffDepartment
             this.BirthdayDateTextBox.Location = new System.Drawing.Point(544, 41);
             this.BirthdayDateTextBox.Name = "BirthdayDateTextBox";
             this.BirthdayDateTextBox.ReadOnly = true;
-            this.BirthdayDateTextBox.Size = new System.Drawing.Size(208, 23);
+            this.BirthdayDateTextBox.Size = new System.Drawing.Size(208, 27);
             this.BirthdayDateTextBox.TabIndex = 1;
             // 
             // label9
@@ -271,7 +271,7 @@ namespace StaffDepartment
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(384, 115);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(154, 17);
+            this.label9.Size = new System.Drawing.Size(197, 22);
             this.label9.TabIndex = 0;
             this.label9.Text = "Серия трудовой книги";
             // 
@@ -280,7 +280,7 @@ namespace StaffDepartment
             this.WBNumberTextBox.Location = new System.Drawing.Point(544, 143);
             this.WBNumberTextBox.Name = "WBNumberTextBox";
             this.WBNumberTextBox.ReadOnly = true;
-            this.WBNumberTextBox.Size = new System.Drawing.Size(208, 23);
+            this.WBNumberTextBox.Size = new System.Drawing.Size(208, 27);
             this.WBNumberTextBox.TabIndex = 1;
             // 
             // label10
@@ -288,7 +288,7 @@ namespace StaffDepartment
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(384, 146);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(156, 17);
+            this.label10.Size = new System.Drawing.Size(200, 22);
             this.label10.TabIndex = 0;
             this.label10.Text = "Номер трудовой книги";
             // 
@@ -297,7 +297,7 @@ namespace StaffDepartment
             this.MCNumberTextBox.Location = new System.Drawing.Point(544, 175);
             this.MCNumberTextBox.Name = "MCNumberTextBox";
             this.MCNumberTextBox.ReadOnly = true;
-            this.MCNumberTextBox.Size = new System.Drawing.Size(208, 23);
+            this.MCNumberTextBox.Size = new System.Drawing.Size(208, 27);
             this.MCNumberTextBox.TabIndex = 1;
             // 
             // label11
@@ -305,7 +305,7 @@ namespace StaffDepartment
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(384, 178);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(124, 17);
+            this.label11.Size = new System.Drawing.Size(161, 22);
             this.label11.TabIndex = 0;
             this.label11.Text = "Номер мед. книги";
             // 
@@ -314,7 +314,7 @@ namespace StaffDepartment
             this.ExperienceTextBox.Location = new System.Drawing.Point(544, 207);
             this.ExperienceTextBox.Name = "ExperienceTextBox";
             this.ExperienceTextBox.ReadOnly = true;
-            this.ExperienceTextBox.Size = new System.Drawing.Size(208, 23);
+            this.ExperienceTextBox.Size = new System.Drawing.Size(208, 27);
             this.ExperienceTextBox.TabIndex = 1;
             // 
             // label12
@@ -322,7 +322,7 @@ namespace StaffDepartment
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(384, 210);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(135, 17);
+            this.label12.Size = new System.Drawing.Size(170, 22);
             this.label12.TabIndex = 0;
             this.label12.Text = "Опыт работы (мес)";
             // 
@@ -331,7 +331,7 @@ namespace StaffDepartment
             this.PersonellNumberTextBox.Location = new System.Drawing.Point(145, 15);
             this.PersonellNumberTextBox.Name = "PersonellNumberTextBox";
             this.PersonellNumberTextBox.ReadOnly = true;
-            this.PersonellNumberTextBox.Size = new System.Drawing.Size(281, 23);
+            this.PersonellNumberTextBox.Size = new System.Drawing.Size(281, 27);
             this.PersonellNumberTextBox.TabIndex = 1;
             // 
             // label13
@@ -339,7 +339,7 @@ namespace StaffDepartment
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(12, 18);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(127, 17);
+            this.label13.Size = new System.Drawing.Size(162, 22);
             this.label13.TabIndex = 0;
             this.label13.Text = "Табельный номер";
             // 
@@ -348,7 +348,7 @@ namespace StaffDepartment
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(372, 15);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(121, 17);
+            this.label14.Size = new System.Drawing.Size(153, 22);
             this.label14.TabIndex = 0;
             this.label14.Text = "Номер телефона";
             // 
@@ -358,7 +358,7 @@ namespace StaffDepartment
             this.PhoneNumberTextBox.Mask = "+7(000)000-00-00";
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.ReadOnly = true;
-            this.PhoneNumberTextBox.Size = new System.Drawing.Size(253, 23);
+            this.PhoneNumberTextBox.Size = new System.Drawing.Size(253, 27);
             this.PhoneNumberTextBox.TabIndex = 3;
             // 
             // label15
@@ -366,7 +366,7 @@ namespace StaffDepartment
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(6, 21);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(187, 17);
+            this.label15.Size = new System.Drawing.Size(240, 22);
             this.label15.TabIndex = 0;
             this.label15.Text = "Статус трудового договора";
             // 
@@ -375,7 +375,7 @@ namespace StaffDepartment
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(6, 51);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(126, 17);
+            this.label16.Size = new System.Drawing.Size(158, 22);
             this.label16.TabIndex = 4;
             this.label16.Text = "Дата заключения";
             // 
@@ -384,7 +384,7 @@ namespace StaffDepartment
             this.ConclusionDateTextBox.Location = new System.Drawing.Point(199, 51);
             this.ConclusionDateTextBox.Name = "ConclusionDateTextBox";
             this.ConclusionDateTextBox.ReadOnly = true;
-            this.ConclusionDateTextBox.Size = new System.Drawing.Size(169, 23);
+            this.ConclusionDateTextBox.Size = new System.Drawing.Size(169, 27);
             this.ConclusionDateTextBox.TabIndex = 5;
             // 
             // label17
@@ -392,7 +392,7 @@ namespace StaffDepartment
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(6, 110);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(123, 17);
+            this.label17.Size = new System.Drawing.Size(155, 22);
             this.label17.TabIndex = 6;
             this.label17.Text = "Дата увольнения";
             // 
@@ -401,7 +401,7 @@ namespace StaffDepartment
             this.DismissialDateTextBox.Location = new System.Drawing.Point(199, 110);
             this.DismissialDateTextBox.Name = "DismissialDateTextBox";
             this.DismissialDateTextBox.ReadOnly = true;
-            this.DismissialDateTextBox.Size = new System.Drawing.Size(169, 23);
+            this.DismissialDateTextBox.Size = new System.Drawing.Size(169, 27);
             this.DismissialDateTextBox.TabIndex = 7;
             // 
             // EmploymentDateTextBox
@@ -409,7 +409,7 @@ namespace StaffDepartment
             this.EmploymentDateTextBox.Location = new System.Drawing.Point(199, 81);
             this.EmploymentDateTextBox.Name = "EmploymentDateTextBox";
             this.EmploymentDateTextBox.ReadOnly = true;
-            this.EmploymentDateTextBox.Size = new System.Drawing.Size(169, 23);
+            this.EmploymentDateTextBox.Size = new System.Drawing.Size(169, 27);
             this.EmploymentDateTextBox.TabIndex = 7;
             // 
             // label18
@@ -417,7 +417,7 @@ namespace StaffDepartment
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(6, 81);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(147, 17);
+            this.label18.Size = new System.Drawing.Size(183, 22);
             this.label18.TabIndex = 6;
             this.label18.Text = "Дата начала работы";
             // 
@@ -446,7 +446,7 @@ namespace StaffDepartment
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(12, 48);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(81, 17);
+            this.label19.Size = new System.Drawing.Size(104, 22);
             this.label19.TabIndex = 0;
             this.label19.Text = "Должность";
             // 
@@ -455,7 +455,7 @@ namespace StaffDepartment
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(12, 79);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(108, 17);
+            this.label20.Size = new System.Drawing.Size(136, 22);
             this.label20.TabIndex = 0;
             this.label20.Text = "Рабочий отдел";
             // 
@@ -491,13 +491,23 @@ namespace StaffDepartment
             this.tabPage1.Controls.Add(this.ExperienceTextBox);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.label12);
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(766, 294);
+            this.tabPage1.Size = new System.Drawing.Size(766, 291);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Личная информация";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // ViewEducationDiplomaButton
+            // 
+            this.ViewEducationDiplomaButton.Location = new System.Drawing.Point(387, 251);
+            this.ViewEducationDiplomaButton.Name = "ViewEducationDiplomaButton";
+            this.ViewEducationDiplomaButton.Size = new System.Drawing.Size(365, 34);
+            this.ViewEducationDiplomaButton.TabIndex = 5;
+            this.ViewEducationDiplomaButton.Text = "Просмотреть дипломы сотрудника";
+            this.ViewEducationDiplomaButton.UseVisualStyleBackColor = true;
+            this.ViewEducationDiplomaButton.Click += new System.EventHandler(this.ViewEducationDiplomaButton_Click);
             // 
             // WBSeriesCB
             // 
@@ -524,7 +534,7 @@ namespace StaffDepartment
             "ТК-VI"});
             this.WBSeriesCB.Location = new System.Drawing.Point(544, 113);
             this.WBSeriesCB.Name = "WBSeriesCB";
-            this.WBSeriesCB.Size = new System.Drawing.Size(208, 25);
+            this.WBSeriesCB.Size = new System.Drawing.Size(208, 28);
             this.WBSeriesCB.TabIndex = 4;
             // 
             // PatronymicTextBox
@@ -532,7 +542,7 @@ namespace StaffDepartment
             this.PatronymicTextBox.Location = new System.Drawing.Point(84, 67);
             this.PatronymicTextBox.Name = "PatronymicTextBox";
             this.PatronymicTextBox.ReadOnly = true;
-            this.PatronymicTextBox.Size = new System.Drawing.Size(219, 23);
+            this.PatronymicTextBox.Size = new System.Drawing.Size(219, 27);
             this.PatronymicTextBox.TabIndex = 1;
             // 
             // FirstNameTextBox
@@ -540,7 +550,7 @@ namespace StaffDepartment
             this.FirstNameTextBox.Location = new System.Drawing.Point(84, 39);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
             this.FirstNameTextBox.ReadOnly = true;
-            this.FirstNameTextBox.Size = new System.Drawing.Size(219, 23);
+            this.FirstNameTextBox.Size = new System.Drawing.Size(219, 27);
             this.FirstNameTextBox.TabIndex = 1;
             // 
             // label28
@@ -548,7 +558,7 @@ namespace StaffDepartment
             this.label28.AutoSize = true;
             this.label28.Location = new System.Drawing.Point(9, 42);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(35, 17);
+            this.label28.Size = new System.Drawing.Size(46, 22);
             this.label28.TabIndex = 0;
             this.label28.Text = "Имя";
             // 
@@ -557,7 +567,7 @@ namespace StaffDepartment
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(8, 70);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(71, 17);
+            this.label29.Size = new System.Drawing.Size(89, 22);
             this.label29.TabIndex = 0;
             this.label29.Text = "Отчество";
             // 
@@ -574,10 +584,10 @@ namespace StaffDepartment
             this.tabPage2.Controls.Add(this.PromotionsButton);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label20);
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(766, 294);
+            this.tabPage2.Size = new System.Drawing.Size(766, 291);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Рабочая информация";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -600,7 +610,7 @@ namespace StaffDepartment
             this.WorkingDepartmentCB.FormattingEnabled = true;
             this.WorkingDepartmentCB.Location = new System.Drawing.Point(145, 76);
             this.WorkingDepartmentCB.Name = "WorkingDepartmentCB";
-            this.WorkingDepartmentCB.Size = new System.Drawing.Size(281, 25);
+            this.WorkingDepartmentCB.Size = new System.Drawing.Size(281, 28);
             this.WorkingDepartmentCB.TabIndex = 11;
             // 
             // PostCB
@@ -610,7 +620,7 @@ namespace StaffDepartment
             this.PostCB.FormattingEnabled = true;
             this.PostCB.Location = new System.Drawing.Point(145, 45);
             this.PostCB.Name = "PostCB";
-            this.PostCB.Size = new System.Drawing.Size(281, 25);
+            this.PostCB.Size = new System.Drawing.Size(281, 28);
             this.PostCB.TabIndex = 11;
             // 
             // groupBox3
@@ -641,7 +651,7 @@ namespace StaffDepartment
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(5, 176);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(79, 17);
+            this.label21.Size = new System.Drawing.Size(100, 22);
             this.label21.TabIndex = 0;
             this.label21.Text = "№ корпуса";
             // 
@@ -650,7 +660,7 @@ namespace StaffDepartment
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(190, 148);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(44, 17);
+            this.label22.Size = new System.Drawing.Size(57, 22);
             this.label22.TabIndex = 0;
             this.label22.Text = "№ кв.";
             // 
@@ -659,7 +669,7 @@ namespace StaffDepartment
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(6, 148);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(59, 17);
+            this.label23.Size = new System.Drawing.Size(77, 22);
             this.label23.TabIndex = 0;
             this.label23.Text = "№ дома";
             // 
@@ -668,7 +678,7 @@ namespace StaffDepartment
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(6, 119);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 17);
+            this.label8.Size = new System.Drawing.Size(63, 22);
             this.label8.TabIndex = 0;
             this.label8.Text = "Улица";
             // 
@@ -677,7 +687,7 @@ namespace StaffDepartment
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(6, 89);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(78, 17);
+            this.label24.Size = new System.Drawing.Size(98, 22);
             this.label24.TabIndex = 0;
             this.label24.Text = "Нас. пункт";
             // 
@@ -686,7 +696,7 @@ namespace StaffDepartment
             this.SDHousingNumberTextBox.Location = new System.Drawing.Point(90, 173);
             this.SDHousingNumberTextBox.Name = "SDHousingNumberTextBox";
             this.SDHousingNumberTextBox.ReadOnly = true;
-            this.SDHousingNumberTextBox.Size = new System.Drawing.Size(59, 23);
+            this.SDHousingNumberTextBox.Size = new System.Drawing.Size(59, 27);
             this.SDHousingNumberTextBox.TabIndex = 1;
             // 
             // label25
@@ -694,7 +704,7 @@ namespace StaffDepartment
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(6, 58);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(64, 17);
+            this.label25.Size = new System.Drawing.Size(80, 22);
             this.label25.TabIndex = 0;
             this.label25.Text = "Область";
             // 
@@ -703,7 +713,7 @@ namespace StaffDepartment
             this.SDApartmentNumberTextBox.Location = new System.Drawing.Point(240, 145);
             this.SDApartmentNumberTextBox.Name = "SDApartmentNumberTextBox";
             this.SDApartmentNumberTextBox.ReadOnly = true;
-            this.SDApartmentNumberTextBox.Size = new System.Drawing.Size(52, 23);
+            this.SDApartmentNumberTextBox.Size = new System.Drawing.Size(52, 27);
             this.SDApartmentNumberTextBox.TabIndex = 1;
             // 
             // label26
@@ -711,7 +721,7 @@ namespace StaffDepartment
             this.label26.AutoSize = true;
             this.label26.Location = new System.Drawing.Point(6, 29);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(56, 17);
+            this.label26.Size = new System.Drawing.Size(71, 22);
             this.label26.TabIndex = 0;
             this.label26.Text = "Страна";
             // 
@@ -720,7 +730,7 @@ namespace StaffDepartment
             this.SDHomeNumberTextBox.Location = new System.Drawing.Point(90, 145);
             this.SDHomeNumberTextBox.Name = "SDHomeNumberTextBox";
             this.SDHomeNumberTextBox.ReadOnly = true;
-            this.SDHomeNumberTextBox.Size = new System.Drawing.Size(59, 23);
+            this.SDHomeNumberTextBox.Size = new System.Drawing.Size(59, 27);
             this.SDHomeNumberTextBox.TabIndex = 1;
             // 
             // SDStreetTextBox
@@ -728,7 +738,7 @@ namespace StaffDepartment
             this.SDStreetTextBox.Location = new System.Drawing.Point(90, 116);
             this.SDStreetTextBox.Name = "SDStreetTextBox";
             this.SDStreetTextBox.ReadOnly = true;
-            this.SDStreetTextBox.Size = new System.Drawing.Size(202, 23);
+            this.SDStreetTextBox.Size = new System.Drawing.Size(202, 27);
             this.SDStreetTextBox.TabIndex = 1;
             // 
             // SDLocalityTextBox
@@ -736,7 +746,7 @@ namespace StaffDepartment
             this.SDLocalityTextBox.Location = new System.Drawing.Point(90, 86);
             this.SDLocalityTextBox.Name = "SDLocalityTextBox";
             this.SDLocalityTextBox.ReadOnly = true;
-            this.SDLocalityTextBox.Size = new System.Drawing.Size(202, 23);
+            this.SDLocalityTextBox.Size = new System.Drawing.Size(202, 27);
             this.SDLocalityTextBox.TabIndex = 1;
             // 
             // SDRegionTextBox
@@ -744,7 +754,7 @@ namespace StaffDepartment
             this.SDRegionTextBox.Location = new System.Drawing.Point(76, 55);
             this.SDRegionTextBox.Name = "SDRegionTextBox";
             this.SDRegionTextBox.ReadOnly = true;
-            this.SDRegionTextBox.Size = new System.Drawing.Size(216, 23);
+            this.SDRegionTextBox.Size = new System.Drawing.Size(216, 27);
             this.SDRegionTextBox.TabIndex = 1;
             // 
             // SDCountryTextBox
@@ -752,7 +762,7 @@ namespace StaffDepartment
             this.SDCountryTextBox.Location = new System.Drawing.Point(76, 26);
             this.SDCountryTextBox.Name = "SDCountryTextBox";
             this.SDCountryTextBox.ReadOnly = true;
-            this.SDCountryTextBox.Size = new System.Drawing.Size(216, 23);
+            this.SDCountryTextBox.Size = new System.Drawing.Size(216, 27);
             this.SDCountryTextBox.TabIndex = 1;
             // 
             // groupBox2
@@ -783,30 +793,21 @@ namespace StaffDepartment
             "расторгнут"});
             this.ContractStatusCB.Location = new System.Drawing.Point(199, 18);
             this.ContractStatusCB.Name = "ContractStatusCB";
-            this.ContractStatusCB.Size = new System.Drawing.Size(169, 25);
+            this.ContractStatusCB.Size = new System.Drawing.Size(169, 28);
             this.ContractStatusCB.TabIndex = 11;
             this.ContractStatusCB.SelectedIndexChanged += new System.EventHandler(this.ContractStatusCB_SelectedIndexChanged);
             // 
             // toolStrip1
             // 
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.UpdateInfoButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(774, 26);
+            this.toolStrip1.Size = new System.Drawing.Size(774, 32);
             this.toolStrip1.TabIndex = 10;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // ViewEducationDiplomaButton
-            // 
-            this.ViewEducationDiplomaButton.Location = new System.Drawing.Point(387, 251);
-            this.ViewEducationDiplomaButton.Name = "ViewEducationDiplomaButton";
-            this.ViewEducationDiplomaButton.Size = new System.Drawing.Size(365, 34);
-            this.ViewEducationDiplomaButton.TabIndex = 5;
-            this.ViewEducationDiplomaButton.Text = "Просмотреть дипломы сотрудника";
-            this.ViewEducationDiplomaButton.UseVisualStyleBackColor = true;
-            this.ViewEducationDiplomaButton.Click += new System.EventHandler(this.ViewEducationDiplomaButton_Click);
             // 
             // UpdateInfoButton
             // 
@@ -814,19 +815,20 @@ namespace StaffDepartment
             this.UpdateInfoButton.Image = ((System.Drawing.Image)(resources.GetObject("UpdateInfoButton.Image")));
             this.UpdateInfoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.UpdateInfoButton.Name = "UpdateInfoButton";
-            this.UpdateInfoButton.Size = new System.Drawing.Size(197, 23);
+            this.UpdateInfoButton.Size = new System.Drawing.Size(254, 29);
             this.UpdateInfoButton.Text = "Редактировать информацию";
             this.UpdateInfoButton.Click += new System.EventHandler(this.UpdateInfoButton_Click);
             // 
             // FileForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(774, 354);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FileForm";

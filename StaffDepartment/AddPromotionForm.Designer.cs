@@ -29,6 +29,7 @@ namespace StaffDepartment
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPromotionForm));
             this.label1 = new System.Windows.Forms.Label();
             this.PromotionTypeCB = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,7 +48,7 @@ namespace StaffDepartment
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 17);
+            this.label1.Size = new System.Drawing.Size(142, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Тип поощрения";
             // 
@@ -62,7 +63,7 @@ namespace StaffDepartment
             "почетная грамота"});
             this.PromotionTypeCB.Location = new System.Drawing.Point(147, 10);
             this.PromotionTypeCB.Name = "PromotionTypeCB";
-            this.PromotionTypeCB.Size = new System.Drawing.Size(259, 25);
+            this.PromotionTypeCB.Size = new System.Drawing.Size(259, 28);
             this.PromotionTypeCB.TabIndex = 1;
             // 
             // label2
@@ -70,7 +71,7 @@ namespace StaffDepartment
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 17);
+            this.label2.Size = new System.Drawing.Size(152, 22);
             this.label2.TabIndex = 0;
             this.label2.Text = "Дата поощрения";
             // 
@@ -79,7 +80,7 @@ namespace StaffDepartment
             this.PromotionDateTB.Location = new System.Drawing.Point(147, 48);
             this.PromotionDateTB.Mask = "00-00-0000";
             this.PromotionDateTB.Name = "PromotionDateTB";
-            this.PromotionDateTB.Size = new System.Drawing.Size(190, 23);
+            this.PromotionDateTB.Size = new System.Drawing.Size(190, 27);
             this.PromotionDateTB.TabIndex = 2;
             // 
             // ReasonTB
@@ -95,7 +96,7 @@ namespace StaffDepartment
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 85);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(207, 17);
+            this.label3.Size = new System.Drawing.Size(260, 22);
             this.label3.TabIndex = 0;
             this.label3.Text = "Опишите причину поощрения";
             // 
@@ -116,6 +117,7 @@ namespace StaffDepartment
             this.EmployeesDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeesDataGrid.Location = new System.Drawing.Point(16, 256);
             this.EmployeesDataGrid.Name = "EmployeesDataGrid";
+            this.EmployeesDataGrid.RowHeadersWidth = 51;
             this.EmployeesDataGrid.Size = new System.Drawing.Size(507, 150);
             this.EmployeesDataGrid.TabIndex = 9;
             // 
@@ -124,7 +126,7 @@ namespace StaffDepartment
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(13, 236);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(347, 17);
+            this.label4.Size = new System.Drawing.Size(440, 22);
             this.label4.TabIndex = 0;
             this.label4.Text = "Сотрудники, которым будет назначено поощрение";
             // 
@@ -134,7 +136,7 @@ namespace StaffDepartment
             this.AddEmployeeLink.LinkColor = System.Drawing.Color.Black;
             this.AddEmployeeLink.Location = new System.Drawing.Point(451, 236);
             this.AddEmployeeLink.Name = "AddEmployeeLink";
-            this.AddEmployeeLink.Size = new System.Drawing.Size(72, 17);
+            this.AddEmployeeLink.Size = new System.Drawing.Size(91, 22);
             this.AddEmployeeLink.TabIndex = 10;
             this.AddEmployeeLink.TabStop = true;
             this.AddEmployeeLink.Text = "Добавить";
@@ -142,7 +144,7 @@ namespace StaffDepartment
             // 
             // AddPromotionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 446);
             this.Controls.Add(this.AddEmployeeLink);
@@ -157,6 +159,7 @@ namespace StaffDepartment
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "AddPromotionForm";
